@@ -45,7 +45,11 @@ CG_KEY = os.environ.get("COINGECKO_KEY", "").strip()
 STOOQ_CSV = "https://stooq.com/q/d/l/"
 CBR_URL = "https://www.cbr-xml-daily.ru/daily_json.js"
 
-USER_AGENT = "trader-panel/1.0 (+github actions collector)"
+USER_AGENT = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/128.0 Safari/537.36")
+YAHOO_CHART = "https://query1.finance.yahoo.com/v8/finance/chart/"
+CG_PAUSE = float(os.environ.get("CG_PAUSE", "7"))     # пауза между запросами к CoinGecko
+STOOQ_PAUSE = 1.2
 TIMEOUT = 30
 HISTORY_DAYS = 400
 
@@ -75,6 +79,18 @@ def http_get(url, params=None, headers=None, retries=3):
             ctx = ssl.create_default_context()
             with urllib.request.urlopen(req, timeout=TIMEOUT, context=ctx) as resp:
                 return resp.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as exc:
+            last = exc
+            if exc.code == 429:
+                wait = 45 * (attempt + 1)
+                if attempt < retries - 1:
+                    log("  лимит запросов, жду %ss" % wait)
+                    time.sleep(wait)
+                    continue
+            wait = 2 ** attempt
+            if attempt < retries - 1:
+                log("  повтор через %ss после ошибки: %s" % (wait, exc))
+                time.sleep(wait)
         except Exception as exc:  # noqa: BLE001
             last = exc
             wait = 2 ** attempt
@@ -161,7 +177,7 @@ def fetch_crypto(coins):
                         rec["ath_pct"] = item.get("ath_change_percentage")
             except Exception as exc:  # noqa: BLE001
                 log("CoinGecko %s: чанк не забрался: %s" % (vs, exc))
-            time.sleep(2.5)  # бережём лимит free-тарифа
+            time.sleep(CG_PAUSE)  # бережём лимит free-тарифа
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     for cg_id, rec in data.items():
         coin = by_id.get(cg_id)
@@ -186,13 +202,30 @@ def fetch_crypto(coins):
     return rows, report
 
 
-def backfill_crypto(coins, days=365):
-    """Дневная история крипты за год: по одному запросу на монету, не спеша."""
+def history_depth():
+    """Сколько дневных точек уже лежит по каждому тикеру."""
+    depth = {}
+    if not os.path.exists(PRICES_CSV):
+        return depth
+    with open(PRICES_CSV, encoding="utf-8") as fh:
+        for row in csv.DictReader(fh):
+            depth[row["symbol"]] = depth.get(row["symbol"], 0) + 1
+    return depth
+
+
+def backfill_crypto(coins, days=365, min_depth=300):
+    """Дневная история крипты за год. Пропускает то, что уже загружено,
+    поэтому при обрыве по лимиту следующий прогон доберёт остаток."""
     out = []
+    depth = history_depth()
+    skipped = 0
     for coin in coins:
         if not coin.get("cg"):
             continue
         if coin.get("tier") == "avoid":
+            continue
+        if depth.get(coin["symbol"], 0) >= min_depth:
+            skipped += 1
             continue
         try:
             raw = http_get(
@@ -210,7 +243,60 @@ def backfill_crypto(coins, days=365):
             log("  история %s: %d точек" % (coin["symbol"], len(series)))
         except Exception as exc:  # noqa: BLE001
             log("  история %s не забралась: %s" % (coin["symbol"], exc))
-        time.sleep(3)
+        time.sleep(CG_PAUSE)
+    if skipped:
+        log("  пропущено (история уже есть): %d" % skipped)
+    return out
+
+
+def resolve_xstocks(items):
+    """Ищем на CoinGecko сами токены Wallet вида AAPLX, TSLAX, SPYX."""
+    wanted = {}
+    for item in items:
+        wallet = item.get("wallet")
+        if wallet:
+            wanted[wallet.upper().rstrip("X") + "X"] = item
+    if not wanted:
+        return []
+    try:
+        listing = json.loads(http_get(CG_BASE + "/coins/list", headers=cg_headers()))
+    except Exception as exc:  # noqa: BLE001
+        log("xStocks: список монет не забрался: %s" % exc)
+        return []
+    found = []
+    for entry in listing:
+        sym = entry["symbol"].upper()
+        if sym in wanted and "xstock" in entry["id"].lower():
+            item = wanted[sym]
+            found.append({"symbol": item["wallet"], "name": item["name"] + " (токен Wallet)",
+                          "cg": entry["id"], "tier": item.get("tier"), "wallet_earn": None})
+    log("xStocks: нашлось токенов %d из %d" % (len(found), len(wanted)))
+    return found
+
+
+# --------------------------------------------------------------------- Yahoo
+
+def fetch_yahoo_candles(symbol, days=400):
+    """Дневные свечи с Yahoo Finance. Без ключа, нужен браузерный User-Agent."""
+    rng = "1y" if days <= 370 else "2y"
+    raw = http_get(YAHOO_CHART + urllib.parse.quote(symbol),
+                   params={"range": rng, "interval": "1d"},
+                   headers={"Accept": "application/json"})
+    data = json.loads(raw)
+    result = (data.get("chart") or {}).get("result") or []
+    if not result:
+        err = (data.get("chart") or {}).get("error")
+        raise ValueError("пустой ответ Yahoo: %s" % err)
+    res = result[0]
+    stamps = res.get("timestamp") or []
+    quote = ((res.get("indicators") or {}).get("quote") or [{}])[0]
+    closes = quote.get("close") or []
+    out = []
+    for ts, close in zip(stamps, closes):
+        if close is None:
+            continue
+        out.append({"date": datetime.fromtimestamp(ts, tz=timezone.utc).strftime("%Y-%m-%d"),
+                    "close": float(close)})
     return out
 
 
@@ -232,15 +318,23 @@ def parse_stooq_csv(text):
     return out
 
 
-def fetch_stooq(items, asset_class):
-    """Дневные свечи с Stooq. Один запрос на тикер, поэтому идём не спеша."""
+def fetch_daily(items, asset_class):
+    """Дневные свечи: сначала Yahoo, если не вышло, то Stooq."""
     rows, report = [], {"ok": [], "failed": []}
     d2 = datetime.now(timezone.utc)
     d1 = d2 - timedelta(days=HISTORY_DAYS)
     for item in items:
-        symbols = [s for s in (item.get("stooq"), item.get("alt")) if s]
         candles = []
         used = None
+        if item.get("yahoo"):
+            try:
+                candles = fetch_yahoo_candles(item["yahoo"], HISTORY_DAYS)
+                if candles:
+                    used = "yahoo:" + item["yahoo"]
+            except Exception as exc:  # noqa: BLE001
+                log("Yahoo %s: %s" % (item["yahoo"], exc))
+            time.sleep(0.6)
+        symbols = [] if used else [s for s in (item.get("stooq"), item.get("alt")) if s]
         for sym in symbols:
             try:
                 text = http_get(STOOQ_CSV, params={
@@ -249,11 +343,12 @@ def fetch_stooq(items, asset_class):
                 })
                 candles = parse_stooq_csv(text)
                 if candles:
-                    used = sym
+                    used = "stooq:" + sym
                     break
+                log("  Stooq %s ответил без данных: %s" % (sym, text.strip()[:120].replace("\n", " ")))
             except Exception as exc:  # noqa: BLE001
                 log("Stooq %s: %s" % (sym, exc))
-            time.sleep(0.7)
+            time.sleep(STOOQ_PAUSE)
         if not candles:
             report["failed"].append(item["symbol"])
             continue
@@ -270,7 +365,7 @@ def fetch_stooq(items, asset_class):
                 backfill_rows.append({
                     "date": c["date"], "symbol": item["symbol"],
                     "asset_class": asset_class, "close_usd": c["close"],
-                    "close_rub": None, "source": "stooq:" + used,
+                    "close_rub": None, "source": used,
                 })
         rows.append({
             "date": last["date"],
@@ -278,7 +373,7 @@ def fetch_stooq(items, asset_class):
             "asset_class": asset_class,
             "close_usd": last["close"],
             "close_rub": None,
-            "source": "stooq:" + used,
+            "source": used,
             "extra": {
                 "chg_24h": change(1),
                 "chg_7d": change(5),
@@ -290,8 +385,7 @@ def fetch_stooq(items, asset_class):
             "wallet": item.get("wallet"),
         })
         report["ok"].append(item["symbol"])
-        time.sleep(0.7)
-    log("Stooq (%s): получено %d из %d" % (asset_class, len(report["ok"]), len(items)))
+    log("Дневные свечи (%s): получено %d из %d" % (asset_class, len(report["ok"]), len(items)))
     return rows, report
 
 
@@ -481,9 +575,17 @@ def main():
     all_rows += rows
     reports["crypto"] = rep
 
+    xs = resolve_xstocks(uni["equity"] + uni["etf"])
+    if xs:
+        rows, rep = fetch_crypto(xs)
+        for row in rows:
+            row["asset_class"] = "wallet_token"
+        all_rows += rows
+        reports["wallet_token"] = rep
+
     for block, klass in (("equity", "equity"), ("etf", "etf"),
                          ("commodity", "commodity"), ("index", "index")):
-        rows, rep = fetch_stooq(uni[block], klass)
+        rows, rep = fetch_daily(uni[block], klass)
         all_rows += rows
         reports[block] = rep
 

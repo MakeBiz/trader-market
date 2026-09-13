@@ -12,10 +12,6 @@ on:
         description: 'Показать, какие тикеры не разрешились'
         type: boolean
         default: false
-      backfill:
-        description: 'Догрузить историю за год (запустить один раз при старте)'
-        type: boolean
-        default: false
 
 permissions:
   contents: write
@@ -41,8 +37,9 @@ jobs:
       - name: Сбор котировок
         env:
           COINGECKO_KEY: ${{ secrets.COINGECKO_KEY }}
+          CG_PAUSE: '7'
         run: |
-          python3 collector/collect.py ${{ inputs.check && '--check' || '' }} ${{ inputs.backfill && '--backfill' || '' }}
+          python3 collector/collect.py --backfill ${{ inputs.check && '--check' || '' }}
 
       - name: Коммит данных
         run: |

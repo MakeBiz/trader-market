@@ -14,6 +14,12 @@ rm -f .git/index.lock 2>/dev/null
 say "1/5 Подтягиваю то, что собрал робот"
 git fetch origin main -q && git merge origin/main -q --no-edit 2>/dev/null || git rebase origin/main -q 2>/dev/null || true
 
+if [ -f workflow-collect.yml ]; then
+  mkdir -p .github/workflows
+  mv -f workflow-collect.yml .github/workflows/collect.yml
+  echo "  обновлён workflow сборщика"
+fi
+
 say "2/5 Убираю тестовые строки из истории цен"
 python3 collector/collect.py --selftest >/dev/null 2>&1 && echo "  самотест пройден" || echo "  самотест не прошёл, но публикую"
 python3 - <<'PY' 2>/dev/null || true

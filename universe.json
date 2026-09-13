@@ -1,114 +1,747 @@
 {
-  "_comment": "Вселенная инструментов Telegram Wallet. tier: core (ядро), liquid (ликвидный второй эшелон), spec (спекулятивный), avoid (не торгуем). cg = id на CoinGecko, stooq = тикер на Stooq.",
-  "crypto": [
-    {"symbol": "BTC",   "name": "Bitcoin",          "cg": "bitcoin",                 "tier": "core",   "wallet_earn": null},
-    {"symbol": "ETH",   "name": "Ethereum",         "cg": "ethereum",                "tier": "core",   "wallet_earn": 4.37},
-    {"symbol": "SOL",   "name": "Solana",           "cg": "solana",                  "tier": "core",   "wallet_earn": 15.03},
-    {"symbol": "USDT",  "name": "Tether",           "cg": "tether",                  "tier": "cash",   "wallet_earn": 9.0},
-    {"symbol": "XRP",   "name": "XRP",              "cg": "ripple",                  "tier": "liquid", "wallet_earn": null},
-    {"symbol": "TRX",   "name": "TRON",             "cg": "tron",                    "tier": "liquid", "wallet_earn": 13.65},
-    {"symbol": "TON",   "name": "Gram (Toncoin)",   "cg": "the-open-network",        "tier": "liquid", "wallet_earn": 12.32},
-    {"symbol": "LINK",  "name": "Chainlink",        "cg": "chainlink",               "tier": "liquid", "wallet_earn": null},
-    {"symbol": "ADA",   "name": "Cardano",          "cg": "cardano",                 "tier": "liquid", "wallet_earn": null},
-    {"symbol": "AVAX",  "name": "Avalanche",        "cg": "avalanche-2",             "tier": "liquid", "wallet_earn": null},
-    {"symbol": "DOT",   "name": "Polkadot",         "cg": "polkadot",                "tier": "liquid", "wallet_earn": null},
-    {"symbol": "LTC",   "name": "Litecoin",         "cg": "litecoin",                "tier": "liquid", "wallet_earn": null},
-    {"symbol": "BCH",   "name": "Bitcoin Cash",     "cg": "bitcoin-cash",            "tier": "liquid", "wallet_earn": null},
-    {"symbol": "XLM",   "name": "Stellar",          "cg": "stellar",                 "tier": "liquid", "wallet_earn": null},
-    {"symbol": "XMR",   "name": "Monero",           "cg": "monero",                  "tier": "liquid", "wallet_earn": null},
-    {"symbol": "ZEC",   "name": "Zcash",            "cg": "zcash",                   "tier": "spec",   "wallet_earn": null},
-    {"symbol": "HYPE",  "name": "Hyperliquid",      "cg": "hyperliquid",             "tier": "spec",   "wallet_earn": null},
-    {"symbol": "TAO",   "name": "Bittensor",        "cg": "bittensor",               "tier": "spec",   "wallet_earn": null},
-    {"symbol": "SUI",   "name": "Sui",              "cg": "sui",                     "tier": "spec",   "wallet_earn": null},
-    {"symbol": "NEAR",  "name": "NEAR Protocol",    "cg": "near",                    "tier": "spec",   "wallet_earn": null},
-    {"symbol": "HBAR",  "name": "Hedera",           "cg": "hedera-hashgraph",        "tier": "spec",   "wallet_earn": null},
-    {"symbol": "AAVE",  "name": "Aave",             "cg": "aave",                    "tier": "spec",   "wallet_earn": null},
-    {"symbol": "UNI",   "name": "Uniswap",          "cg": "uniswap",                 "tier": "spec",   "wallet_earn": null},
-    {"symbol": "ATOM",  "name": "Cosmos",           "cg": "cosmos",                  "tier": "spec",   "wallet_earn": null},
-    {"symbol": "ALGO",  "name": "Algorand",         "cg": "algorand",                "tier": "spec",   "wallet_earn": null},
-    {"symbol": "FIL",   "name": "Filecoin",         "cg": "filecoin",                "tier": "spec",   "wallet_earn": null},
-    {"symbol": "ARB",   "name": "Arbitrum",         "cg": "arbitrum",                "tier": "spec",   "wallet_earn": null},
-    {"symbol": "ICP",   "name": "Internet Computer","cg": "internet-computer",       "tier": "spec",   "wallet_earn": null},
-    {"symbol": "ETC",   "name": "Ethereum Classic", "cg": "ethereum-classic",        "tier": "spec",   "wallet_earn": null},
-    {"symbol": "ONDO",  "name": "Ondo",             "cg": "ondo-finance",            "tier": "spec",   "wallet_earn": null},
-    {"symbol": "ENA",   "name": "Ethena",           "cg": "ethena",                  "tier": "spec",   "wallet_earn": null},
-    {"symbol": "WLD",   "name": "Worldcoin",        "cg": "worldcoin-wld",           "tier": "spec",   "wallet_earn": null},
-    {"symbol": "KAS",   "name": "Kaspa",            "cg": "kaspa",                   "tier": "spec",   "wallet_earn": null},
-    {"symbol": "MNT",   "name": "Mantle",           "cg": "mantle",                  "tier": "spec",   "wallet_earn": null},
-    {"symbol": "XAUT",  "name": "Tether Gold",      "cg": "tether-gold",             "tier": "liquid", "wallet_earn": null},
-    {"symbol": "DOGE",  "name": "Dogecoin",         "cg": "dogecoin",                "tier": "avoid",  "wallet_earn": null},
-    {"symbol": "SHIB",  "name": "Shiba Inu",        "cg": "shiba-inu",               "tier": "avoid",  "wallet_earn": null},
-    {"symbol": "PEPE",  "name": "Pepe",             "cg": "pepe",                    "tier": "avoid",  "wallet_earn": null},
-    {"symbol": "PUMP",  "name": "Pump.fun",         "cg": "pump-fun",                "tier": "avoid",  "wallet_earn": null},
-    {"symbol": "WLFI",  "name": "World Liberty Fin","cg": "world-liberty-financial", "tier": "avoid",  "wallet_earn": null},
-    {"symbol": "TRUMP", "name": "OFFICIAL TRUMP",   "cg": "official-trump",          "tier": "avoid",  "wallet_earn": null},
-    {"symbol": "ADI",   "name": "ADI",              "cg": null,                      "tier": "avoid",  "wallet_earn": 25.0}
-  ],
-  "equity": [
-    {"symbol": "NVDA", "wallet": "NVDAx", "name": "NVIDIA",              "stooq": "nvda.us", "tier": "core"},
-    {"symbol": "AAPL", "wallet": "AAPLx", "name": "Apple",               "stooq": "aapl.us", "tier": "core"},
-    {"symbol": "MSFT", "wallet": "MSFTx", "name": "Microsoft",           "stooq": "msft.us", "tier": "core"},
-    {"symbol": "GOOGL","wallet": "GOOGLx","name": "Alphabet",            "stooq": "googl.us","tier": "core"},
-    {"symbol": "AMZN", "wallet": "AMZNx", "name": "Amazon",              "stooq": "amzn.us", "tier": "core"},
-    {"symbol": "TSLA", "wallet": "TSLAx", "name": "Tesla",               "stooq": "tsla.us", "tier": "liquid"},
-    {"symbol": "AVGO", "wallet": "AVGOx", "name": "Broadcom",            "stooq": "avgo.us", "tier": "liquid"},
-    {"symbol": "TSM",  "wallet": null,    "name": "Taiwan Semiconductor","stooq": "tsm.us",  "tier": "liquid"},
-    {"symbol": "MU",   "wallet": null,    "name": "Micron",              "stooq": "mu.us",   "tier": "spec"},
-    {"symbol": "AMD",  "wallet": "AMDx",  "name": "AMD",                 "stooq": "amd.us",  "tier": "spec"},
-    {"symbol": "MRVL", "wallet": "MRVLx", "name": "Marvell",             "stooq": "mrvl.us", "tier": "spec"},
-    {"symbol": "INTC", "wallet": "INTCx", "name": "Intel",               "stooq": "intc.us", "tier": "spec"},
-    {"symbol": "ORCL", "wallet": "ORCLx", "name": "Oracle",              "stooq": "orcl.us", "tier": "spec"},
-    {"symbol": "PLTR", "wallet": null,    "name": "Palantir",            "stooq": "pltr.us", "tier": "spec"},
-    {"symbol": "COIN", "wallet": "COINx", "name": "Coinbase",            "stooq": "coin.us", "tier": "spec"},
-    {"symbol": "HOOD", "wallet": "HOODx", "name": "Robinhood",           "stooq": "hood.us", "tier": "spec"},
-    {"symbol": "MSTR", "wallet": "MSTRx", "name": "Strategy",            "stooq": "mstr.us", "tier": "spec"},
-    {"symbol": "CRCL", "wallet": "CRCLx", "name": "Circle",              "stooq": "crcl.us", "tier": "spec"},
-    {"symbol": "NBIS", "wallet": null,    "name": "Nebius",              "stooq": "nbis.us", "tier": "spec"},
-    {"symbol": "CRWV", "wallet": null,    "name": "CoreWeave",           "stooq": "crwv.us", "tier": "spec"},
-    {"symbol": "LLY",  "wallet": "LLYx",  "name": "Eli Lilly",           "stooq": "lly.us",  "tier": "liquid"},
-    {"symbol": "UNH",  "wallet": "UNHx",  "name": "UnitedHealth",        "stooq": "unh.us",  "tier": "liquid"},
-    {"symbol": "NVO",  "wallet": "NVOx",  "name": "Novo Nordisk",        "stooq": "nvo.us",  "tier": "liquid"},
-    {"symbol": "XOM",  "wallet": "XOMx",  "name": "Exxon Mobil",         "stooq": "xom.us",  "tier": "liquid"},
-    {"symbol": "CVX",  "wallet": "CVXx",  "name": "Chevron",             "stooq": "cvx.us",  "tier": "liquid"},
-    {"symbol": "V",    "wallet": "Vx",    "name": "Visa",                "stooq": "v.us",    "tier": "liquid"},
-    {"symbol": "JNJ",  "wallet": "JNJx",  "name": "Johnson & Johnson",   "stooq": "jnj.us",  "tier": "liquid"},
-    {"symbol": "PG",   "wallet": "PGx",   "name": "Procter & Gamble",    "stooq": "pg.us",   "tier": "liquid"},
-    {"symbol": "NFLX", "wallet": "NFLXx", "name": "Netflix",             "stooq": "nflx.us", "tier": "liquid"}
-  ],
-  "etf": [
-    {"symbol": "SPY",  "wallet": "SPYx",  "name": "SPDR S&P 500",        "stooq": "spy.us",  "tier": "core"},
-    {"symbol": "QQQ",  "wallet": "QQQx",  "name": "Invesco QQQ",         "stooq": "qqq.us",  "tier": "core"},
-    {"symbol": "VTI",  "wallet": "VTIx",  "name": "Vanguard Total Stock","stooq": "vti.us",  "tier": "core"},
-    {"symbol": "IWM",  "wallet": "IWMx",  "name": "iShares Russell 2000","stooq": "iwm.us",  "tier": "liquid"},
-    {"symbol": "IEMG", "wallet": "IEMGx", "name": "iShares MSCI EM",     "stooq": "iemg.us", "tier": "liquid"},
-    {"symbol": "SLV",  "wallet": "SLVx",  "name": "iShares Silver",      "stooq": "slv.us",  "tier": "liquid"},
-    {"symbol": "PPLT", "wallet": "PPLTx", "name": "Platinum ETF",        "stooq": "pplt.us", "tier": "spec"},
-    {"symbol": "PALL", "wallet": "PALLx", "name": "Palladium ETF",       "stooq": "pall.us", "tier": "spec"},
-    {"symbol": "XLE",  "wallet": "XLEx",  "name": "Energy Select SPDR",  "stooq": "xle.us",  "tier": "liquid"},
-    {"symbol": "XOP",  "wallet": "XOPx",  "name": "S&P Oil & Gas Expl",  "stooq": "xop.us",  "tier": "spec"},
-    {"symbol": "COPX", "wallet": "COPXx", "name": "Global X Copper",     "stooq": "copx.us", "tier": "spec"},
-    {"symbol": "URA",  "wallet": "URAx",  "name": "Global X Uranium",    "stooq": "ura.us",  "tier": "spec"},
-    {"symbol": "TQQQ", "wallet": "TQQQx", "name": "ProShares UltraPro QQQ","stooq":"tqqq.us","tier": "avoid"},
-    {"symbol": "TBLL", "wallet": "TBLLx", "name": "Short Term Treasury", "stooq": "tbll.us", "tier": "cash"}
-  ],
-  "commodity": [
-    {"symbol": "GOLD",     "name": "Золото",   "stooq": "xauusd", "alt": "gc.f", "tier": "core"},
-    {"symbol": "SILVER",   "name": "Серебро",  "stooq": "xagusd", "alt": "si.f", "tier": "liquid"},
-    {"symbol": "PLATINUM", "name": "Платина",  "stooq": "xptusd", "alt": "pl.f", "tier": "spec"},
-    {"symbol": "WTI",      "name": "Нефть WTI","stooq": "cl.f",   "alt": null,   "tier": "liquid"},
-    {"symbol": "BRENT",    "name": "Нефть Brent","stooq": "cb.f", "alt": null,   "tier": "liquid"}
-  ],
-  "index": [
-    {"symbol": "SPX",  "name": "S&P 500",    "stooq": "^spx", "tier": "core"},
-    {"symbol": "NDX",  "name": "Nasdaq 100", "stooq": "^ndx", "tier": "core"},
-    {"symbol": "DXY",  "name": "Индекс доллара", "stooq": "^dxy", "tier": "macro"},
-    {"symbol": "USDRUB","name": "USD/RUB",   "stooq": "usdrub", "tier": "macro"}
-  ],
-  "no_public_price": [
-    {"wallet": "SPCXx", "name": "SpaceX",         "why": "пре-IPO, публичной котировки нет"},
-    {"wallet": "OPENAI","name": "OpenAI",         "why": "пре-IPO, только внутри Wallet"},
-    {"wallet": "ANTHROPIC","name": "Anthropic",   "why": "пре-IPO, только внутри Wallet"},
-    {"wallet": "BSPx",  "name": "Bending Spoons", "why": "не торгуется публично"},
-    {"wallet": "DFDVx", "name": "DFDV",           "why": "проверить тикер вручную"}
-  ]
+ "_comment": "Вселенная инструментов Telegram Wallet. tier: core (ядро), liquid (ликвидный второй эшелон), spec (спекулятивный), avoid (не торгуем). cg = id на CoinGecko, stooq = тикер на Stooq.",
+ "crypto": [
+  {
+   "symbol": "BTC",
+   "name": "Bitcoin",
+   "cg": "bitcoin",
+   "tier": "core",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "ETH",
+   "name": "Ethereum",
+   "cg": "ethereum",
+   "tier": "core",
+   "wallet_earn": 4.37
+  },
+  {
+   "symbol": "SOL",
+   "name": "Solana",
+   "cg": "solana",
+   "tier": "core",
+   "wallet_earn": 15.03
+  },
+  {
+   "symbol": "USDT",
+   "name": "Tether",
+   "cg": "tether",
+   "tier": "cash",
+   "wallet_earn": 9.0
+  },
+  {
+   "symbol": "XRP",
+   "name": "XRP",
+   "cg": "ripple",
+   "tier": "liquid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "TRX",
+   "name": "TRON",
+   "cg": "tron",
+   "tier": "liquid",
+   "wallet_earn": 13.65
+  },
+  {
+   "symbol": "TON",
+   "name": "Gram (Toncoin)",
+   "cg": "the-open-network",
+   "tier": "liquid",
+   "wallet_earn": 12.32
+  },
+  {
+   "symbol": "LINK",
+   "name": "Chainlink",
+   "cg": "chainlink",
+   "tier": "liquid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "ADA",
+   "name": "Cardano",
+   "cg": "cardano",
+   "tier": "liquid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "AVAX",
+   "name": "Avalanche",
+   "cg": "avalanche-2",
+   "tier": "liquid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "DOT",
+   "name": "Polkadot",
+   "cg": "polkadot",
+   "tier": "liquid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "LTC",
+   "name": "Litecoin",
+   "cg": "litecoin",
+   "tier": "liquid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "BCH",
+   "name": "Bitcoin Cash",
+   "cg": "bitcoin-cash",
+   "tier": "liquid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "XLM",
+   "name": "Stellar",
+   "cg": "stellar",
+   "tier": "liquid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "XMR",
+   "name": "Monero",
+   "cg": "monero",
+   "tier": "liquid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "ZEC",
+   "name": "Zcash",
+   "cg": "zcash",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "HYPE",
+   "name": "Hyperliquid",
+   "cg": "hyperliquid",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "TAO",
+   "name": "Bittensor",
+   "cg": "bittensor",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "SUI",
+   "name": "Sui",
+   "cg": "sui",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "NEAR",
+   "name": "NEAR Protocol",
+   "cg": "near",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "HBAR",
+   "name": "Hedera",
+   "cg": "hedera-hashgraph",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "AAVE",
+   "name": "Aave",
+   "cg": "aave",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "UNI",
+   "name": "Uniswap",
+   "cg": "uniswap",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "ATOM",
+   "name": "Cosmos",
+   "cg": "cosmos",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "ALGO",
+   "name": "Algorand",
+   "cg": "algorand",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "FIL",
+   "name": "Filecoin",
+   "cg": "filecoin",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "ARB",
+   "name": "Arbitrum",
+   "cg": "arbitrum",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "ICP",
+   "name": "Internet Computer",
+   "cg": "internet-computer",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "ETC",
+   "name": "Ethereum Classic",
+   "cg": "ethereum-classic",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "ONDO",
+   "name": "Ondo",
+   "cg": "ondo-finance",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "ENA",
+   "name": "Ethena",
+   "cg": "ethena",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "WLD",
+   "name": "Worldcoin",
+   "cg": "worldcoin-wld",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "KAS",
+   "name": "Kaspa",
+   "cg": "kaspa",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "MNT",
+   "name": "Mantle",
+   "cg": "mantle",
+   "tier": "spec",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "XAUT",
+   "name": "Tether Gold",
+   "cg": "tether-gold",
+   "tier": "liquid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "DOGE",
+   "name": "Dogecoin",
+   "cg": "dogecoin",
+   "tier": "avoid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "SHIB",
+   "name": "Shiba Inu",
+   "cg": "shiba-inu",
+   "tier": "avoid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "PEPE",
+   "name": "Pepe",
+   "cg": "pepe",
+   "tier": "avoid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "PUMP",
+   "name": "Pump.fun",
+   "cg": "pump-fun",
+   "tier": "avoid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "WLFI",
+   "name": "World Liberty Fin",
+   "cg": "world-liberty-financial",
+   "tier": "avoid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "TRUMP",
+   "name": "OFFICIAL TRUMP",
+   "cg": "official-trump",
+   "tier": "avoid",
+   "wallet_earn": null
+  },
+  {
+   "symbol": "ADI",
+   "name": "ADI",
+   "cg": null,
+   "tier": "avoid",
+   "wallet_earn": 25.0
+  }
+ ],
+ "equity": [
+  {
+   "symbol": "NVDA",
+   "wallet": "NVDAx",
+   "name": "NVIDIA",
+   "stooq": "nvda.us",
+   "tier": "core",
+   "yahoo": "NVDA"
+  },
+  {
+   "symbol": "AAPL",
+   "wallet": "AAPLx",
+   "name": "Apple",
+   "stooq": "aapl.us",
+   "tier": "core",
+   "yahoo": "AAPL"
+  },
+  {
+   "symbol": "MSFT",
+   "wallet": "MSFTx",
+   "name": "Microsoft",
+   "stooq": "msft.us",
+   "tier": "core",
+   "yahoo": "MSFT"
+  },
+  {
+   "symbol": "GOOGL",
+   "wallet": "GOOGLx",
+   "name": "Alphabet",
+   "stooq": "googl.us",
+   "tier": "core",
+   "yahoo": "GOOGL"
+  },
+  {
+   "symbol": "AMZN",
+   "wallet": "AMZNx",
+   "name": "Amazon",
+   "stooq": "amzn.us",
+   "tier": "core",
+   "yahoo": "AMZN"
+  },
+  {
+   "symbol": "TSLA",
+   "wallet": "TSLAx",
+   "name": "Tesla",
+   "stooq": "tsla.us",
+   "tier": "liquid",
+   "yahoo": "TSLA"
+  },
+  {
+   "symbol": "AVGO",
+   "wallet": "AVGOx",
+   "name": "Broadcom",
+   "stooq": "avgo.us",
+   "tier": "liquid",
+   "yahoo": "AVGO"
+  },
+  {
+   "symbol": "TSM",
+   "wallet": null,
+   "name": "Taiwan Semiconductor",
+   "stooq": "tsm.us",
+   "tier": "liquid",
+   "yahoo": "TSM"
+  },
+  {
+   "symbol": "MU",
+   "wallet": null,
+   "name": "Micron",
+   "stooq": "mu.us",
+   "tier": "spec",
+   "yahoo": "MU"
+  },
+  {
+   "symbol": "AMD",
+   "wallet": "AMDx",
+   "name": "AMD",
+   "stooq": "amd.us",
+   "tier": "spec",
+   "yahoo": "AMD"
+  },
+  {
+   "symbol": "MRVL",
+   "wallet": "MRVLx",
+   "name": "Marvell",
+   "stooq": "mrvl.us",
+   "tier": "spec",
+   "yahoo": "MRVL"
+  },
+  {
+   "symbol": "INTC",
+   "wallet": "INTCx",
+   "name": "Intel",
+   "stooq": "intc.us",
+   "tier": "spec",
+   "yahoo": "INTC"
+  },
+  {
+   "symbol": "ORCL",
+   "wallet": "ORCLx",
+   "name": "Oracle",
+   "stooq": "orcl.us",
+   "tier": "spec",
+   "yahoo": "ORCL"
+  },
+  {
+   "symbol": "PLTR",
+   "wallet": null,
+   "name": "Palantir",
+   "stooq": "pltr.us",
+   "tier": "spec",
+   "yahoo": "PLTR"
+  },
+  {
+   "symbol": "COIN",
+   "wallet": "COINx",
+   "name": "Coinbase",
+   "stooq": "coin.us",
+   "tier": "spec",
+   "yahoo": "COIN"
+  },
+  {
+   "symbol": "HOOD",
+   "wallet": "HOODx",
+   "name": "Robinhood",
+   "stooq": "hood.us",
+   "tier": "spec",
+   "yahoo": "HOOD"
+  },
+  {
+   "symbol": "MSTR",
+   "wallet": "MSTRx",
+   "name": "Strategy",
+   "stooq": "mstr.us",
+   "tier": "spec",
+   "yahoo": "MSTR"
+  },
+  {
+   "symbol": "CRCL",
+   "wallet": "CRCLx",
+   "name": "Circle",
+   "stooq": "crcl.us",
+   "tier": "spec",
+   "yahoo": "CRCL"
+  },
+  {
+   "symbol": "NBIS",
+   "wallet": null,
+   "name": "Nebius",
+   "stooq": "nbis.us",
+   "tier": "spec",
+   "yahoo": "NBIS"
+  },
+  {
+   "symbol": "CRWV",
+   "wallet": null,
+   "name": "CoreWeave",
+   "stooq": "crwv.us",
+   "tier": "spec",
+   "yahoo": "CRWV"
+  },
+  {
+   "symbol": "LLY",
+   "wallet": "LLYx",
+   "name": "Eli Lilly",
+   "stooq": "lly.us",
+   "tier": "liquid",
+   "yahoo": "LLY"
+  },
+  {
+   "symbol": "UNH",
+   "wallet": "UNHx",
+   "name": "UnitedHealth",
+   "stooq": "unh.us",
+   "tier": "liquid",
+   "yahoo": "UNH"
+  },
+  {
+   "symbol": "NVO",
+   "wallet": "NVOx",
+   "name": "Novo Nordisk",
+   "stooq": "nvo.us",
+   "tier": "liquid",
+   "yahoo": "NVO"
+  },
+  {
+   "symbol": "XOM",
+   "wallet": "XOMx",
+   "name": "Exxon Mobil",
+   "stooq": "xom.us",
+   "tier": "liquid",
+   "yahoo": "XOM"
+  },
+  {
+   "symbol": "CVX",
+   "wallet": "CVXx",
+   "name": "Chevron",
+   "stooq": "cvx.us",
+   "tier": "liquid",
+   "yahoo": "CVX"
+  },
+  {
+   "symbol": "V",
+   "wallet": "Vx",
+   "name": "Visa",
+   "stooq": "v.us",
+   "tier": "liquid",
+   "yahoo": "V"
+  },
+  {
+   "symbol": "JNJ",
+   "wallet": "JNJx",
+   "name": "Johnson & Johnson",
+   "stooq": "jnj.us",
+   "tier": "liquid",
+   "yahoo": "JNJ"
+  },
+  {
+   "symbol": "PG",
+   "wallet": "PGx",
+   "name": "Procter & Gamble",
+   "stooq": "pg.us",
+   "tier": "liquid",
+   "yahoo": "PG"
+  },
+  {
+   "symbol": "NFLX",
+   "wallet": "NFLXx",
+   "name": "Netflix",
+   "stooq": "nflx.us",
+   "tier": "liquid",
+   "yahoo": "NFLX"
+  }
+ ],
+ "etf": [
+  {
+   "symbol": "SPY",
+   "wallet": "SPYx",
+   "name": "SPDR S&P 500",
+   "stooq": "spy.us",
+   "tier": "core",
+   "yahoo": "SPY"
+  },
+  {
+   "symbol": "QQQ",
+   "wallet": "QQQx",
+   "name": "Invesco QQQ",
+   "stooq": "qqq.us",
+   "tier": "core",
+   "yahoo": "QQQ"
+  },
+  {
+   "symbol": "VTI",
+   "wallet": "VTIx",
+   "name": "Vanguard Total Stock",
+   "stooq": "vti.us",
+   "tier": "core",
+   "yahoo": "VTI"
+  },
+  {
+   "symbol": "IWM",
+   "wallet": "IWMx",
+   "name": "iShares Russell 2000",
+   "stooq": "iwm.us",
+   "tier": "liquid",
+   "yahoo": "IWM"
+  },
+  {
+   "symbol": "IEMG",
+   "wallet": "IEMGx",
+   "name": "iShares MSCI EM",
+   "stooq": "iemg.us",
+   "tier": "liquid",
+   "yahoo": "IEMG"
+  },
+  {
+   "symbol": "SLV",
+   "wallet": "SLVx",
+   "name": "iShares Silver",
+   "stooq": "slv.us",
+   "tier": "liquid",
+   "yahoo": "SLV"
+  },
+  {
+   "symbol": "PPLT",
+   "wallet": "PPLTx",
+   "name": "Platinum ETF",
+   "stooq": "pplt.us",
+   "tier": "spec",
+   "yahoo": "PPLT"
+  },
+  {
+   "symbol": "PALL",
+   "wallet": "PALLx",
+   "name": "Palladium ETF",
+   "stooq": "pall.us",
+   "tier": "spec",
+   "yahoo": "PALL"
+  },
+  {
+   "symbol": "XLE",
+   "wallet": "XLEx",
+   "name": "Energy Select SPDR",
+   "stooq": "xle.us",
+   "tier": "liquid",
+   "yahoo": "XLE"
+  },
+  {
+   "symbol": "XOP",
+   "wallet": "XOPx",
+   "name": "S&P Oil & Gas Expl",
+   "stooq": "xop.us",
+   "tier": "spec",
+   "yahoo": "XOP"
+  },
+  {
+   "symbol": "COPX",
+   "wallet": "COPXx",
+   "name": "Global X Copper",
+   "stooq": "copx.us",
+   "tier": "spec",
+   "yahoo": "COPX"
+  },
+  {
+   "symbol": "URA",
+   "wallet": "URAx",
+   "name": "Global X Uranium",
+   "stooq": "ura.us",
+   "tier": "spec",
+   "yahoo": "URA"
+  },
+  {
+   "symbol": "TQQQ",
+   "wallet": "TQQQx",
+   "name": "ProShares UltraPro QQQ",
+   "stooq": "tqqq.us",
+   "tier": "avoid",
+   "yahoo": "TQQQ"
+  },
+  {
+   "symbol": "TBLL",
+   "wallet": "TBLLx",
+   "name": "Short Term Treasury",
+   "stooq": "tbll.us",
+   "tier": "cash",
+   "yahoo": "TBLL"
+  }
+ ],
+ "commodity": [
+  {
+   "symbol": "GOLD",
+   "name": "Золото",
+   "stooq": "xauusd",
+   "alt": "gc.f",
+   "tier": "core",
+   "yahoo": "GC=F"
+  },
+  {
+   "symbol": "SILVER",
+   "name": "Серебро",
+   "stooq": "xagusd",
+   "alt": "si.f",
+   "tier": "liquid",
+   "yahoo": "SI=F"
+  },
+  {
+   "symbol": "PLATINUM",
+   "name": "Платина",
+   "stooq": "xptusd",
+   "alt": "pl.f",
+   "tier": "spec",
+   "yahoo": "PL=F"
+  },
+  {
+   "symbol": "WTI",
+   "name": "Нефть WTI",
+   "stooq": "cl.f",
+   "alt": null,
+   "tier": "liquid",
+   "yahoo": "CL=F"
+  },
+  {
+   "symbol": "BRENT",
+   "name": "Нефть Brent",
+   "stooq": "cb.f",
+   "alt": null,
+   "tier": "liquid",
+   "yahoo": "BZ=F"
+  }
+ ],
+ "index": [
+  {
+   "symbol": "SPX",
+   "name": "S&P 500",
+   "stooq": "^spx",
+   "tier": "core",
+   "yahoo": "^GSPC"
+  },
+  {
+   "symbol": "NDX",
+   "name": "Nasdaq 100",
+   "stooq": "^ndx",
+   "tier": "core",
+   "yahoo": "^NDX"
+  },
+  {
+   "symbol": "DXY",
+   "name": "Индекс доллара",
+   "stooq": "^dxy",
+   "tier": "macro",
+   "yahoo": "DX-Y.NYB"
+  },
+  {
+   "symbol": "USDRUB",
+   "name": "USD/RUB",
+   "stooq": "usdrub",
+   "tier": "macro",
+   "yahoo": "RUB=X"
+  }
+ ],
+ "no_public_price": [
+  {
+   "wallet": "SPCXx",
+   "name": "SpaceX",
+   "why": "пре-IPO, публичной котировки нет"
+  },
+  {
+   "wallet": "OPENAI",
+   "name": "OpenAI",
+   "why": "пре-IPO, только внутри Wallet"
+  },
+  {
+   "wallet": "ANTHROPIC",
+   "name": "Anthropic",
+   "why": "пре-IPO, только внутри Wallet"
+  },
+  {
+   "wallet": "BSPx",
+   "name": "Bending Spoons",
+   "why": "не торгуется публично"
+  },
+  {
+   "wallet": "DFDVx",
+   "name": "DFDV",
+   "why": "проверить тикер вручную"
+  }
+ ],
+ "_note_xstocks": "Акции и фонды в Wallet это токены xStocks. Помимо базовой бумаги с Yahoo, сборщик пробует найти сам токен на CoinGecko по символу вида AAPLX, тогда цена совпадает с тем, что ты реально видишь в приложении."
 }

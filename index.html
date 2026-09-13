@@ -214,8 +214,10 @@ const PCT = n => (n >= 0 ? '+' : '') + n.toFixed(2) + '%';
 
 const state = {snap: null, pf: null, hist: [], tab: 'crypto', sort: {key: 'chg_24h', dir: -1}};
 
-const CLASS_LABEL = {crypto: 'Крипта', equity: 'Акции', etf: 'Фонды', commodity: 'Товары', index: 'Индексы'};
-const CLASS_COLOR = {crypto: 'var(--series-1)', equity: 'var(--series-2)', etf: 'var(--series-3)',
+const CLASS_LABEL = {crypto: 'Крипта', wallet_token: 'Акции в Wallet', equity: 'Акции (биржа)',
+                     etf: 'Фонды', commodity: 'Товары', index: 'Индексы'};
+const CLASS_COLOR = {crypto: 'var(--series-1)', wallet_token: 'var(--series-3)',
+                     equity: 'var(--series-2)', etf: 'var(--series-3)',
                      commodity: 'var(--series-2)', index: 'var(--series-1)'};
 
 function money(v) { return v == null ? '—' : RUB.format(v) + ' ₽'; }

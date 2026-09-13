@@ -17,6 +17,7 @@
   python3 collector/collect.py            обычный сбор
   python3 collector/collect.py --selftest проверка логики на фикстурах, без сети
   python3 collector/collect.py --check    сбор + отчёт, какие тикеры не разрешились
+  python3 collector/collect.py --backfill догрузить дневную историю за год
 """
 
 import csv
@@ -376,10 +377,38 @@ def write_log():
         fh.write("\n".join(_log_lines) + "\n")
 
 
+def clean_history(bad_sources=("fixture", "selftest")):
+    """Выкидывает из истории строки, попавшие туда из самотеста."""
+    if not os.path.exists(PRICES_CSV):
+        log("Истории ещё нет, чистить нечего")
+        return 0
+    with open(PRICES_CSV, encoding="utf-8") as fh:
+        rows = list(csv.DictReader(fh))
+    keep = [r for r in rows if r.get("source") not in bad_sources]
+    dropped = len(rows) - len(keep)
+    if dropped:
+        with open(PRICES_CSV, "w", encoding="utf-8", newline="") as fh:
+            writer = csv.DictWriter(fh, fieldnames=CSV_FIELDS)
+            writer.writeheader()
+            writer.writerows([{k: r.get(k) for k in CSV_FIELDS} for r in keep])
+    log("Уборка истории: выкинуто %d строк, осталось %d" % (dropped, len(keep)))
+    return dropped
+
+
 # ------------------------------------------------------------------ Самотест
 
 def selftest():
-    """Проверяем парсинг и запись без сети."""
+    """Проверяем парсинг и запись без сети. Настоящие данные не трогаем."""
+    global DATA, PRICES_CSV, LATEST_JSON, CG_MAP, LOGS
+    import tempfile
+    sandbox = tempfile.mkdtemp(prefix="trader-selftest-")
+    DATA = sandbox
+    PRICES_CSV = os.path.join(sandbox, "prices_daily.csv")
+    LATEST_JSON = os.path.join(sandbox, "latest.json")
+    CG_MAP = os.path.join(sandbox, "coingecko_map.json")
+    LOGS = os.path.join(sandbox, "logs")
+    log("САМОТЕСТ идёт в песочнице %s" % sandbox)
+
     log("САМОТЕСТ: парсинг Stooq")
     sample = "Date,Open,High,Low,Close,Volume\n2026-09-09,10,11,9,10.5,100\n2026-09-10,10.5,12,10,11.5,120\n"
     candles = parse_stooq_csv(sample)
@@ -417,7 +446,9 @@ def selftest():
             assert "symbol" in item and "tier" in item, item
     log("  ок, вселенная: %s" % ", ".join(
         "%s=%d" % (b, len(uni[b])) for b in ("crypto", "equity", "etf", "commodity", "index")))
-    log("САМОТЕСТ ПРОЙДЕН")
+    import shutil
+    shutil.rmtree(sandbox, ignore_errors=True)
+    log("САМОТЕСТ ПРОЙДЕН, песочница убрана")
 
 
 # ---------------------------------------------------------------------- main
@@ -428,14 +459,16 @@ def main():
 
     if "--selftest" in args:
         selftest()
-        write_log()
         return 0
 
     global BACKFILL
     BACKFILL = "--backfill" in args
+    if "--clean" in args:
+        clean_history()
     log("Старт сбора%s, %s UTC" % (
         " (с историей за год)" if BACKFILL else "",
         datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")))
+    clean_history()
     uni = load_universe()
     all_rows, reports = [], {}
 

@@ -118,6 +118,17 @@
   .bar-track { display: block; background: var(--surface-2); border-radius: 4px; height: 18px; overflow: hidden; }
   .bar-fill { display: block; height: 100%; border-radius: 0 4px 4px 0; min-width: 3px; }
   .bar-val { text-align: right; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+  .div-row { display: grid; grid-template-columns: 74px 1fr 96px; align-items: center; gap: 10px; font-size: 13px; }
+  .div-track { display: grid; grid-template-columns: 1fr 1fr; height: 18px; }
+  .div-half { display: flex; height: 100%; }
+  .div-half.neg { justify-content: flex-end; border-right: 1px solid var(--border); }
+  .div-half.pos { justify-content: flex-start; }
+  .div-fill { display: block; height: 100%; min-width: 2px; }
+  .div-half.neg .div-fill { border-radius: 4px 0 0 4px; background: var(--critical); }
+  .div-half.pos .div-fill { border-radius: 0 4px 4px 0; background: var(--good); }
+  @media (max-width: 520px) {
+    .div-row { grid-template-columns: 58px 1fr 84px; }
+  }
 
   .chart-box { position: relative; }
   svg { display: block; width: 100%; height: auto; overflow: visible; font-family: inherit; }
@@ -166,6 +177,12 @@
   <h2>Состав портфеля</h2>
   <p class="sub" id="weights-sub">доля каждой позиции</p>
   <div class="bars" id="weights"></div>
+</section>
+
+<section class="card" id="contrib-card">
+  <h2>Вклад в результат</h2>
+  <p class="sub" id="contrib-sub">кто тянет портфель вверх, а кто вниз</p>
+  <div class="bars" id="contrib"></div>
 </section>
 
 <section class="card" id="positions-card">
@@ -527,6 +544,33 @@ function renderWeights() {
        <ul>${plan.do_not_touch.map(x => `<li>${x}</li>`).join('')}</ul></div>` : '');
 }
 
+/* --------------------------------------------------- вклад в результат */
+function renderContribution() {
+  const pf = state.pf, card = document.getElementById('contrib-card');
+  if (!pf || !pf.positions) { card.style.display = 'none'; return; }
+  const items = pf.positions.filter(p => p.pnl_rub != null && Math.abs(p.pnl_rub) > 0.5);
+  if (!items.length) { card.style.display = 'none'; return; }
+  items.sort((a, b) => b.pnl_rub - a.pnl_rub);
+  const max = Math.max(...items.map(p => Math.abs(p.pnl_rub)));
+  const totalAbs = items.reduce((a, p) => a + Math.abs(p.pnl_rub), 0);
+  const net = items.reduce((a, p) => a + p.pnl_rub, 0);
+  document.getElementById('contrib-sub').textContent =
+    `итог ${net >= 0 ? '+' : '−'}${RUB.format(Math.abs(net))} ₽, разложено по бумагам`;
+  document.getElementById('contrib').innerHTML = items.map(p => {
+    const w = Math.abs(p.pnl_rub) / max * 100;
+    const share = totalAbs ? Math.abs(p.pnl_rub) / totalAbs * 100 : 0;
+    const up = p.pnl_rub >= 0;
+    return `<div class="div-row">
+      <span class="sym">${p.symbol}</span>
+      <span class="div-track">
+        <span class="div-half neg">${up ? '' : `<span class="div-fill" style="width:${w}%"></span>`}</span>
+        <span class="div-half pos">${up ? `<span class="div-fill" style="width:${w}%"></span>` : ''}</span>
+      </span>
+      <span class="bar-val ${up ? 'up' : 'down'}">${up ? '↑ +' : '↓ −'}${RUB.format(Math.abs(p.pnl_rub))} ₽</span>
+    </div>`;
+  }).join('');
+}
+
 /* ------------------------------------------------------------- позиции */
 function renderPositions() {
   const pf = state.pf, card = document.getElementById('positions-card');
@@ -642,7 +686,7 @@ function renderRisk() {
     stamp.textContent = 'данных пока нет, запусти сбор';
   }
 
-  renderTiles(); renderChart(); renderWeights(); renderPositions();
+  renderTiles(); renderChart(); renderWeights(); renderContribution(); renderPositions();
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(renderChart, 150); });
   renderTabs(); renderMarket(); renderRisk();
 })();

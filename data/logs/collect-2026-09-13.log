@@ -102,3 +102,99 @@
 [18:34:14] etf: SPY, QQQ, VTI, IWM, IEMG, SLV, PPLT, PALL, XLE, XOP, COPX, URA, TQQQ, TBLL
 [18:34:14] commodity: GOLD, SILVER, PLATINUM, WTI, BRENT
 [18:34:14] index: SPX, NDX, DXY, USDRUB
+[19:34:17] Старт сбора (с историей за год), 2026-09-13 19:34 UTC, бюджет 22 мин
+[19:34:17] Уборка истории: выкинуто 0 строк, осталось 5517
+[19:34:17] Разрешаю 1 id через /coins/list
+[19:34:17]   ADI -> adi-token
+[19:34:31] CoinGecko: получено 42 из 42
+[19:34:31] xStocks: нашлось токенов 36 из 38
+[19:34:39]   лимит запросов, жду 20s
+[19:34:59]   лимит запросов, жду 40s
+[19:35:46] CoinGecko: получено 34 из 36
+[19:35:46]   лимит запросов, жду 20s
+[19:36:06]   лимит запросов, жду 40s
+[19:36:46] Yahoo NVDA: HTTP Error 429: Too Many Requests
+[19:36:47]   Stooq nvda.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:36:48]   лимит запросов, жду 20s
+[19:37:08]   лимит запросов, жду 40s
+[19:37:48] Yahoo AAPL: HTTP Error 429: Too Many Requests
+[19:37:50]   Stooq aapl.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:37:51]   лимит запросов, жду 20s
+[19:38:11]   лимит запросов, жду 40s
+[19:38:51] Yahoo MSFT: HTTP Error 429: Too Many Requests
+[19:38:52]   Stooq msft.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:38:53]   лимит запросов, жду 20s
+[19:39:14]   лимит запросов, жду 40s
+[19:39:54] Yahoo GOOGL: HTTP Error 429: Too Many Requests
+[19:39:55]   Stooq googl.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:39:56]   лимит запросов, жду 20s
+[19:40:16]   лимит запросов, жду 40s
+[19:40:56] Yahoo AMZN: HTTP Error 429: Too Many Requests
+[19:40:57]   Stooq amzn.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:40:59]   лимит запросов, жду 20s
+[19:41:19]   лимит запросов, жду 40s
+[19:41:59] Yahoo TSLA: HTTP Error 429: Too Many Requests
+[19:42:00]   Stooq tsla.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:42:01]   лимит запросов, жду 20s
+[19:42:21]   лимит запросов, жду 40s
+[19:43:01] Yahoo AVGO: HTTP Error 429: Too Many Requests
+[19:43:02]   Stooq avgo.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:43:04]   лимит запросов, жду 20s
+[19:43:24]   лимит запросов, жду 40s
+[19:44:04] Yahoo TSM: HTTP Error 429: Too Many Requests
+[19:44:05]   Stooq tsm.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:44:06]   лимит запросов, жду 20s
+[19:44:26]   лимит запросов, жду 40s
+[19:45:06] Yahoo MU: HTTP Error 429: Too Many Requests
+[19:45:07]   Stooq mu.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:45:09]   лимит запросов, жду 20s
+[19:45:29]   лимит запросов, жду 40s
+[19:46:09] Yahoo AMD: HTTP Error 429: Too Many Requests
+[19:46:10]   Stooq amd.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:46:11]   лимит запросов, жду 20s
+[19:46:31]   лимит запросов, жду 40s
+[19:47:11] Yahoo MRVL: HTTP Error 429: Too Many Requests
+[19:47:12]   Stooq mrvl.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:47:13]   лимит запросов, жду 20s
+[19:47:34]   лимит запросов, жду 40s
+[19:48:14] Yahoo INTC: HTTP Error 429: Too Many Requests
+[19:48:15]   Stooq intc.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:48:16]   лимит запросов, жду 20s
+[19:48:36]   лимит запросов, жду 40s
+[19:49:16] Yahoo ORCL: HTTP Error 429: Too Many Requests
+[19:49:17]   Stooq orcl.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:49:18]   лимит запросов, жду 20s
+[19:49:39]   лимит запросов, жду 40s
+[19:50:19] Yahoo PLTR: HTTP Error 429: Too Many Requests
+[19:50:20]   Stooq pltr.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:50:21]   лимит запросов, жду 20s
+[19:50:41]   лимит запросов, жду 40s
+[19:51:21] Yahoo COIN: HTTP Error 429: Too Many Requests
+[19:51:22]   Stooq coin.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:51:23]   лимит запросов, жду 20s
+[19:51:43]   лимит запросов, жду 40s
+[19:52:23] Yahoo HOOD: HTTP Error 429: Too Many Requests
+[19:52:25]   Stooq hood.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:52:26]   лимит запросов, жду 20s
+[19:52:46]   лимит запросов, жду 40s
+[19:53:26] Yahoo MSTR: HTTP Error 429: Too Many Requests
+[19:53:27]   Stooq mstr.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:53:28]   лимит запросов, жду 20s
+[19:53:48]   лимит запросов, жду 40s
+[19:54:29] Yahoo CRCL: HTTP Error 429: Too Many Requests
+[19:54:30]   Stooq crcl.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[19:54:31]   время вышло, остаток класса equity доберём следующим прогоном
+[19:54:31] Дневные свечи (equity): получено 0 из 29
+[19:54:31]   время вышло, остаток класса etf доберём следующим прогоном
+[19:54:31] Дневные свечи (etf): получено 0 из 14
+[19:54:31]   время вышло, остаток класса commodity доберём следующим прогоном
+[19:54:31] Дневные свечи (commodity): получено 0 из 5
+[19:54:31]   время вышло, остаток класса index доберём следующим прогоном
+[19:54:31] Дневные свечи (index): получено 0 из 4
+[19:54:31] ЦБ РФ: USD/RUB = 84.2569
+[19:54:31] История: добавлено 34 строк, всего уникальных ключей 5536
+[19:54:31] Снапшот: 76 инструментов
+[19:54:31] На догрузку истории времени не осталось, доберём следующим прогоном
+[19:54:31] --- НЕ РАЗРЕШИЛИСЬ ---
+[19:54:31] wallet_token: COPXx, XOPx
+[19:54:31] equity: NVDA, AAPL, MSFT, GOOGL, AMZN, TSLA, AVGO, TSM, MU, AMD, MRVL, INTC, ORCL, PLTR, COIN, HOOD, MSTR, CRCL

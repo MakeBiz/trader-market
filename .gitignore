@@ -1,0 +1,8 @@
+# Личные цифры не уезжают в публичный репозиторий
+portfolio.json
+data/portfolio_latest.json
+data/portfolio_history.csv
+
+.DS_Store
+__pycache__/
+*.pyc

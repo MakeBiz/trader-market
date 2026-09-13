@@ -1,0 +1,36 @@
+{
+  "_": "Скопируй этот файл в portfolio.json и веди его. В git он не попадает: твои суммы остаются только у тебя.",
+  "venue": "Telegram Wallet",
+  "cash_start_rub": 0,
+  "monthly_contribution_rub": 30000,
+  "risk_per_trade_pct": 5,
+  "daily_loss_limit_pct": 5,
+
+  "deposits": [
+    {"date": "2026-09-16", "amount_rub": 30000, "note": "первое пополнение"}
+  ],
+  "withdrawals": [],
+
+  "_trades": "После каждой сделки дописываешь строку. side: buy или sell. price_rub = цена за штуку, fee_rub = комиссия.",
+  "trades": [
+    {"date": "2026-09-17", "symbol": "BTC",  "side": "buy", "qty": 0.00138, "price_rub": 6500000, "fee_rub": 90},
+    {"date": "2026-09-17", "symbol": "USDT", "side": "buy", "qty": 142,     "price_rub": 84.3,    "fee_rub": 0}
+  ],
+
+  "plan": {
+    "comment": "Целевые доли первого транша. Заходим частями, полностью только после заседания ФРС 15-16 сентября.",
+    "targets": [
+      {"symbol": "USDT", "target_pct": 40, "why": "резерв под 9% годовых, докупаем на проливах"},
+      {"symbol": "BTC",  "target_pct": 30, "why": "ядро, выходим ниже 200-дневной 72 800 $"},
+      {"symbol": "SOL",  "target_pct": 15, "why": "15% годовых в Wallet сверх движения цены"},
+      {"symbol": "ETH",  "target_pct": 15, "why": "4,37% годовых, вторая нога ядра"}
+    ],
+    "do_not_touch": [
+      "фьючерсы с плечом 20-50x: при депозите 30 000 ₽ это лотерея, а не торговля",
+      "пре-IPO (SpaceX, OpenAI, Anthropic, Bending Spoons): публичной цены нет, выхода может не быть",
+      "мем-коины (PEPE, SHIB, DOGE, Pump.fun, Fartcoin, Useless)",
+      "ADI под 25% годовых: такая ставка это плата за риск, который не виден снаружи",
+      "TQQQ: тройное плечо на индекс, при росте ставок съедает депозит"
+    ]
+  }
+}

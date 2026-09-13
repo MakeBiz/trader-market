@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Панель трейдера</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg:            #f5f5f3;
+    --surface-1:     #fcfcfb;
+    --surface-2:     #f0efec;
+    --border:        #e2e1dc;
+    --text-primary:  #0b0b0b;
+    --text-secondary:#52514e;
+    --text-muted:    #83827d;
+    --series-1:      #2a78d6;
+    --series-2:      #eb6834;
+    --series-3:      #1baf7a;
+    --good:          #0ca30c;
+    --critical:      #d03b3b;
+    --grid:          #e8e7e3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg:            #121211;
+      --surface-1:     #1a1a19;
+      --surface-2:     #232322;
+      --border:        #383835;
+      --text-primary:  #ffffff;
+      --text-secondary:#c3c2b7;
+      --text-muted:    #8d8c84;
+      --series-1:      #3987e5;
+      --series-2:      #d95926;
+      --series-3:      #199e70;
+      --good:          #0ca30c;
+      --critical:      #d03b3b;
+      --grid:          #2b2b29;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg:            #121211;
+    --surface-1:     #1a1a19;
+    --surface-2:     #232322;
+    --border:        #383835;
+    --text-primary:  #ffffff;
+    --text-secondary:#c3c2b7;
+    --text-muted:    #8d8c84;
+    --series-1:      #3987e5;
+    --series-2:      #d95926;
+    --series-3:      #199e70;
+    --good:          #0ca30c;
+    --critical:      #d03b3b;
+    --grid:          #2b2b29;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-primary);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding-block: 20px 56px; padding-left: 16px; padding-right: 16px; }
+
+  header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+  h1 { font-size: 19px; font-weight: 650; margin: 0; letter-spacing: -0.01em; }
+  .meta { color: var(--text-muted); font-size: 13px; }
+  .meta b { color: var(--text-secondary); font-weight: 600; }
+  .theme-btn {
+    margin-left: auto; background: var(--surface-1); border: 1px solid var(--border);
+    color: var(--text-secondary); border-radius: 8px; padding: 5px 10px;
+    font-size: 13px; cursor: pointer; font-family: inherit;
+  }
+
+  .card {
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px; margin-bottom: 14px;
+  }
+  h2 { font-size: 14px; font-weight: 600; margin: 0 0 2px; letter-spacing: -0.005em; }
+  .sub { font-size: 12.5px; color: var(--text-muted); margin: 0 0 14px; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 14px; }
+  .tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .tile .label { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+  .tile .value { font-size: 24px; font-weight: 650; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .tile .note { font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .up { color: var(--good); }
+  .down { color: var(--critical); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: right; font-weight: 600; color: var(--text-muted); font-size: 12px;
+       padding: 6px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  th.sortable { cursor: pointer; user-select: none; }
+  th.sortable:hover { color: var(--text-primary); }
+  td { padding: 8px; border-bottom: 1px solid var(--grid); text-align: right;
+       font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  .tname { display: flex; align-items: center; gap: 8px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex: 0 0 8px; }
+  .sym { font-weight: 600; }
+  .full { color: var(--text-muted); font-size: 12px; font-weight: 400; }
+  .scroll { overflow-x: auto; margin: 0 -16px; padding: 0 16px; }
+
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tab {
+    background: var(--surface-2); border: 1px solid transparent; color: var(--text-secondary);
+    border-radius: 999px; padding: 5px 12px; font-size: 13px; cursor: pointer; font-family: inherit;
+  }
+  .tab[aria-selected="true"] { background: var(--series-1); color: #fff; }
+
+  .bars { display: grid; gap: 9px; }
+  .bar-row { display: grid; grid-template-columns: 74px 1fr 68px; align-items: center; gap: 10px; font-size: 13px; }
+  .bar-track { display: block; background: var(--surface-2); border-radius: 4px; height: 18px; overflow: hidden; }
+  .bar-fill { display: block; height: 100%; border-radius: 0 4px 4px 0; min-width: 3px; }
+  .bar-val { text-align: right; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+
+  .chart-box { position: relative; }
+  svg { display: block; width: 100%; height: auto; overflow: visible; font-family: inherit; }
+  .tip {
+    position: absolute; pointer-events: none; opacity: 0; transition: opacity .1s;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+    padding: 7px 10px; font-size: 12.5px; box-shadow: 0 4px 16px rgba(0,0,0,.14);
+    white-space: nowrap; font-variant-numeric: tabular-nums; z-index: 5;
+  }
+  .empty { color: var(--text-secondary); font-size: 13.5px; padding: 8px 0; }
+  .plan-item { display: flex; gap: 10px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--grid); font-size: 13.5px; }
+  .plan-item:last-child { border-bottom: 0; }
+  .plan-pct { font-weight: 650; min-width: 42px; font-variant-numeric: tabular-nums; }
+  .plan-why { color: var(--text-muted); font-size: 12.5px; }
+  .warn { border-left: 3px solid var(--series-2); padding-left: 12px; }
+  .warn li { margin-bottom: 5px; color: var(--text-secondary); font-size: 13px; }
+  .warn ul { margin: 6px 0 0; padding-left: 18px; }
+  footer { color: var(--text-muted); font-size: 12px; text-align: center; margin-top: 26px; }
+  @media (max-width: 520px) {
+    .tile .value { font-size: 20px; }
+    .bar-row { grid-template-columns: 62px 1fr 58px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Панель трейдера</h1>
+  <span class="meta" id="stamp">загрузка…</span>
+  <button class="theme-btn" id="theme">тема</button>
+</header>
+
+<div class="tiles" id="tiles"></div>
+
+<section class="card" id="chart-card">
+  <h2>Стоимость портфеля по дням</h2>
+  <p class="sub" id="chart-sub">в рублях, включая кэш</p>
+  <div class="chart-box">
+    <svg id="chart" viewBox="0 0 720 240" preserveAspectRatio="xMidYMid meet" aria-label="График стоимости портфеля"></svg>
+    <div class="tip" id="tip"></div>
+  </div>
+</section>
+
+<section class="card" id="weights-card">
+  <h2>Состав портфеля</h2>
+  <p class="sub" id="weights-sub">доля каждой позиции</p>
+  <div class="bars" id="weights"></div>
+</section>
+
+<section class="card" id="positions-card">
+  <h2>Позиции</h2>
+  <p class="sub">цена и результат по каждой бумаге</p>
+  <div class="scroll"><table id="positions"></table></div>
+</section>
+
+<section class="card">
+  <h2>Рынок</h2>
+  <p class="sub">котировки из публичных источников, обновляются автоматически</p>
+  <div class="tabs" id="tabs"></div>
+  <div class="scroll"><table id="market"></table></div>
+</section>
+
+<section class="card" id="risk-card">
+  <h2>Риск</h2>
+  <p class="sub">рамки, за которые не выходим</p>
+  <div class="bars" id="risk"></div>
+</section>
+
+<footer>Данные: CoinGecko, Stooq, ЦБ РФ. Не инвестиционная рекомендация</footer>
+</div>
+
+<script>
+const RUB = new Intl.NumberFormat('ru-RU', {maximumFractionDigits: 0});
+const RUB2 = new Intl.NumberFormat('ru-RU', {maximumFractionDigits: 2});
+const PCT = n => (n >= 0 ? '+' : '') + n.toFixed(2) + '%';
+
+const state = {snap: null, pf: null, hist: [], tab: 'crypto', sort: {key: 'chg_24h', dir: -1}};
+
+const CLASS_LABEL = {crypto: 'Крипта', equity: 'Акции', etf: 'Фонды', commodity: 'Товары', index: 'Индексы'};
+const CLASS_COLOR = {crypto: 'var(--series-1)', equity: 'var(--series-2)', etf: 'var(--series-3)',
+                     commodity: 'var(--series-2)', index: 'var(--series-1)'};
+
+function money(v) { return v == null ? '—' : RUB.format(v) + ' ₽'; }
+const SMALL = new Intl.NumberFormat('ru-RU', {maximumSignificantDigits: 3});
+function fmtPrice(v) {
+  if (v == null) return '—';
+  return v < 1 ? SMALL.format(v) : RUB2.format(v);
+}
+function pctCell(v) {
+  if (v == null) return '<td class="muted">—</td>';
+  const cls = v >= 0 ? 'up' : 'down';
+  const arrow = v >= 0 ? '↑' : '↓';
+  return `<td class="${cls}">${arrow} ${Math.abs(v).toFixed(2)}%</td>`;
+}
+
+async function loadJSON(path) {
+  try { const r = await fetch(path, {cache: 'no-store'}); return r.ok ? await r.json() : null; }
+  catch (e) { return null; }
+}
+async function loadCSV(path) {
+  try {
+    const r = await fetch(path, {cache: 'no-store'});
+    if (!r.ok) return [];
+    const lines = (await r.text()).trim().split('\n');
+    const head = lines.shift().split(',');
+    return lines.map(l => {
+      const cells = l.split(',');
+      return Object.fromEntries(head.map((h, i) => [h, cells[i]]));
+    });
+  } catch (e) { return []; }
+}
+
+/* ============================================================================
+   Расчёт портфеля в браузере. Ничего личного не уезжает в репозиторий:
+   portfolio.json лежит рядом с панелью и в git не коммитится.
+   ========================================================================== */
+
+function indexPrices(rows) {
+  const by = {};
+  for (const r of rows) {
+    if (!r.symbol || !r.date) continue;
+    const usd = parseFloat(r.close_usd);
+    if (!isFinite(usd)) continue;
+    (by[r.symbol] = by[r.symbol] || []).push({date: r.date, usd, rub: parseFloat(r.close_rub) || null});
+  }
+  for (const k in by) by[k].sort((a, b) => a.date < b.date ? -1 : 1);
+  return by;
+}
+
+/** последняя известная цена на дату (не заглядывая в будущее) */
+function priceOn(prices, symbol, date) {
+  const series = prices[symbol];
+  if (!series || !series.length) return null;
+  let lo = 0, hi = series.length - 1, found = null;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    if (series[mid].date <= date) { found = series[mid]; lo = mid + 1; } else { hi = mid - 1; }
+  }
+  return found;
+}
+
+function usdrubOn(prices, date, snap) {
+  const p = priceOn(prices, 'USDRUB', date);
+  if (p && p.usd) return p.usd;
+  return snap && snap.usdrub ? snap.usdrub.value : null;
+}
+
+/** цена бумаги в рублях на дату */
+function rubOn(prices, symbol, date, snap) {
+  const p = priceOn(prices, symbol, date);
+  if (!p) return null;
+  if (p.rub) return p.rub;
+  const fx = usdrubOn(prices, date, snap);
+  return fx ? p.usd * fx : null;
+}
+
+function today() { return new Date().toISOString().slice(0, 10); }
+
+/** позиции на дату: разворачиваем журнал сделок */
+function holdingsOn(pf, date) {
+  const h = {};
+  for (const t of pf.trades || []) {
+    if (t.date > date) continue;
+    const sign = (t.side || 'buy') === 'sell' ? -1 : 1;
+    const rec = h[t.symbol] = h[t.symbol] || {qty: 0, cost: 0, fees: 0};
+    const qty = Math.abs(+t.qty || 0), price = +t.price_rub || 0;
+    rec.fees += +t.fee_rub || 0;
+    if (sign > 0) { rec.qty += qty; rec.cost += qty * price; }
+    else {
+      const avg = rec.qty ? rec.cost / rec.qty : 0;
+      rec.qty -= qty; rec.cost -= qty * avg;
+    }
+  }
+  for (const k in h) if (Math.abs(h[k].qty) < 1e-12) delete h[k];
+  return h;
+}
+
+/** свободные рубли на дату: пополнения минус покупки плюс продажи минус комиссии */
+function cashOn(pf, date) {
+  let cash = +pf.cash_start_rub || 0;
+  for (const d of pf.deposits || []) if (d.date <= date) cash += +d.amount_rub || 0;
+  for (const w of pf.withdrawals || []) if (w.date <= date) cash -= +w.amount_rub || 0;
+  for (const t of pf.trades || []) {
+    if (t.date > date) continue;
+    const qty = Math.abs(+t.qty || 0), price = +t.price_rub || 0, fee = +t.fee_rub || 0;
+    cash += ((t.side || 'buy') === 'sell' ? qty * price : -qty * price) - fee;
+  }
+  return cash;
+}
+
+function investedOn(pf, date) {
+  let sum = +pf.cash_start_rub || 0;
+  for (const d of pf.deposits || []) if (d.date <= date) sum += +d.amount_rub || 0;
+  for (const w of pf.withdrawals || []) if (w.date <= date) sum -= +w.amount_rub || 0;
+  return sum;
+}
+
+function currentState(pf, snap, prices) {
+  const d = today();
+  const h = holdingsOn(pf, d), cash = cashOn(pf, d), invested = investedOn(pf, d);
+  const inst = (snap && snap.instruments) || {};
+  let market = 0;
+  const positions = [];
+  const noPrice = [];
+  for (const [symbol, rec] of Object.entries(h)) {
+    const live = inst[symbol];
+    let price = live ? (live.rub || (live.usd && snap.usdrub ? live.usd * snap.usdrub.value : null)) : null;
+    if (price == null) price = rubOn(prices, symbol, d, snap);
+    const avg = rec.qty ? rec.cost / rec.qty : 0;
+    if (price == null) { noPrice.push(symbol); }
+    const value = price == null ? null : rec.qty * price;
+    if (value) market += value;
+    positions.push({
+      symbol, name: live ? live.name : symbol, class: live ? live.class : null,
+      qty: +rec.qty.toFixed(10), avg_price_rub: avg, cost_rub: rec.cost,
+      price_rub: price, value_rub: value,
+      pnl_rub: value == null ? null : value - rec.cost,
+      pnl_pct: (value == null || !rec.cost) ? null : (value / rec.cost - 1) * 100,
+      chg_24h: live ? live.chg_24h : null,
+      chg_7d: live ? live.chg_7d : null,
+      weight_pct: null, no_price: price == null,
+    });
+  }
+  const equity = market + cash;
+  for (const p of positions) if (p.value_rub && equity) p.weight_pct = p.value_rub / equity * 100;
+  if (cash > 0 && equity) {
+    positions.push({symbol: 'Кэш', name: 'свободные рубли', class: null, qty: null,
+      avg_price_rub: null, cost_rub: cash, price_rub: null, value_rub: cash,
+      pnl_rub: null, pnl_pct: null, chg_24h: null, weight_pct: cash / equity * 100,
+      no_price: false, is_cash: true});
+  }
+  positions.sort((a, b) => (b.value_rub || 0) - (a.value_rub || 0));
+  const rpt = +pf.risk_per_trade_pct || 0, dl = +pf.daily_loss_limit_pct || 0;
+  return {
+    equity_rub: equity, market_value_rub: market, cash_rub: cash,
+    invested_rub: invested, pnl_rub: equity - invested,
+    pnl_pct: invested ? (equity / invested - 1) * 100 : null,
+    positions, positions_count: positions.filter(p => !p.is_cash).length, no_price: noPrice,
+    risk: {per_trade_pct: rpt, per_trade_rub: equity * rpt / 100,
+           daily_limit_pct: dl, daily_limit_rub: equity * dl / 100,
+           cash_share_pct: equity ? cash / equity * 100 : null},
+  };
+}
+
+/** кривая капитала: пересобирается каждый раз из журнала сделок и истории цен */
+function equityCurve(pf, prices, snap) {
+  const marks = [...(pf.deposits || []).map(d => d.date), ...(pf.trades || []).map(t => t.date)].sort();
+  if (!marks.length) return [];
+  const out = [];
+  const end = new Date(today() + 'T00:00:00Z');
+  for (let d = new Date(marks[0] + 'T00:00:00Z'); d <= end; d.setUTCDate(d.getUTCDate() + 1)) {
+    const day = d.toISOString().slice(0, 10);
+    const h = holdingsOn(pf, day);
+    let market = 0, priced = true;
+    for (const [symbol, rec] of Object.entries(h)) {
+      const price = rubOn(prices, symbol, day, snap);
+      if (price == null) { priced = false; continue; }
+      market += rec.qty * price;
+    }
+    if (!priced && !market) continue;
+    const invested = investedOn(pf, day);
+    const total = market + cashOn(pf, day);
+    out.push({date: day, total_rub: total, invested_rub: invested,
+              pnl_rub: total - invested,
+              pnl_pct: invested ? (total / invested - 1) * 100 : 0});
+  }
+  return out;
+}
+
+/* ---------------------------------------------------------------- плитки */
+function renderTiles() {
+  const pf = state.pf, snap = state.snap, el = document.getElementById('tiles');
+  if (!pf || !pf.positions || !pf.positions.length) {
+    const usdrub = snap && snap.usdrub ? snap.usdrub.value : null;
+    el.innerHTML = `
+      <div class="tile"><div class="label">Портфель</div><div class="value">пока пусто</div>
+        <div class="note">внеси сделки в data/portfolio.json</div></div>
+      <div class="tile"><div class="label">План пополнения</div><div class="value">30 000 ₽</div>
+        <div class="note">в месяц, дальше больше</div></div>
+      <div class="tile"><div class="label">USD/RUB</div><div class="value">${usdrub ? RUB2.format(usdrub) : '—'}</div>
+        <div class="note">курс ЦБ</div></div>`;
+    return;
+  }
+  const pnlCls = pf.pnl_rub >= 0 ? 'up' : 'down';
+  // изменение за сутки без учёта пополнений: иначе день пополнения выглядит как рост
+  let dayChange = null;
+  if (state.hist.length >= 2) {
+    const prev = state.hist[state.hist.length - 2], cur = state.hist[state.hist.length - 1];
+    const flow = (+cur.invested_rub || 0) - (+prev.invested_rub || 0);
+    const base = +prev.total_rub;
+    if (base) dayChange = ((+cur.total_rub - flow) / base - 1) * 100;
+  }
+  el.innerHTML = `
+    <div class="tile"><div class="label">Капитал</div><div class="value">${money(pf.equity_rub)}</div>
+      <div class="note">вложено ${money(pf.invested_rub)}</div></div>
+    <div class="tile"><div class="label">Результат</div>
+      <div class="value ${pnlCls}">${pf.pnl_rub >= 0 ? '+' : '−'}${RUB.format(Math.abs(pf.pnl_rub))} ₽</div>
+      <div class="note ${pnlCls}">${pf.pnl_pct == null ? '' : PCT(pf.pnl_pct)}</div></div>
+    <div class="tile"><div class="label">За сутки</div>
+      <div class="value ${dayChange == null ? '' : (dayChange >= 0 ? 'up' : 'down')}">${dayChange == null ? '—' : PCT(dayChange)}</div>
+      <div class="note">${state.hist.length} дн. истории</div></div>
+    <div class="tile"><div class="label">Кэш</div><div class="value">${money(pf.cash_rub)}</div>
+      <div class="note">${pf.risk && pf.risk.cash_share_pct != null ? pf.risk.cash_share_pct.toFixed(0) + '% капитала' : ''}</div></div>`;
+}
+
+/* ---------------------------------------------------------------- график */
+function renderChart() {
+  const svg = document.getElementById('chart'), tip = document.getElementById('tip');
+  const pts = state.hist.filter(r => r.total_rub).map(r => ({d: r.date, v: +r.total_rub}));
+  if (pts.length < 2) {
+    document.getElementById('chart-card').style.display = 'none';
+    return;
+  }
+  const dep = state.hist.length ? (+state.hist[state.hist.length - 1].invested_rub || 0) : 0;
+  document.getElementById('chart-sub').textContent =
+    `в рублях, ${pts.length} дней, с ${pts[0].d}` + (dep ? `, пополнено ${RUB.format(dep)} ₽` : '');
+  const box0 = svg.parentElement.getBoundingClientRect();
+  const W = Math.max(Math.round(box0.width) || 720, 300);
+  const H = W < 520 ? 190 : 240;
+  const P = {t: 12, r: W < 520 ? 60 : 66, b: 24, l: 2};
+  const min = Math.min(...pts.map(p => p.v)), max = Math.max(...pts.map(p => p.v));
+  const pad = (max - min) * 0.12 || Math.max(max * 0.02, 1);
+  const lo = min - pad, hi = max + pad;
+  const x = i => P.l + i * (W - P.l - P.r) / Math.max(pts.length - 1, 1);
+  const y = v => P.t + (1 - (v - lo) / (hi - lo)) * (H - P.t - P.b);
+
+  const ticks = 4, grid = [];
+  for (let i = 0; i <= ticks; i++) {
+    const v = lo + (hi - lo) * i / ticks, yy = y(v);
+    grid.push(`<line x1="${P.l}" y1="${yy}" x2="${W - P.r}" y2="${yy}" stroke="var(--grid)" stroke-width="1"/>`);
+    grid.push(`<text x="${W - P.r + 8}" y="${yy + 4}" fill="var(--text-muted)" font-size="11">${RUB.format(v)}</text>`);
+  }
+  const line = pts.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p.v).toFixed(1)}`).join(' ');
+  const area = line + ` L${x(pts.length - 1).toFixed(1)},${H - P.b} L${P.l},${H - P.b} Z`;
+  const first = pts[0].v, last = pts[pts.length - 1].v;
+  const stroke = last >= first ? 'var(--series-1)' : 'var(--critical)';
+
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.innerHTML = `
+    <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${stroke}" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="${stroke}" stop-opacity="0"/>
+    </linearGradient></defs>
+    ${grid.join('')}
+    <path d="${area}" fill="url(#g)"/>
+    <path d="${line}" fill="none" stroke="${stroke}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <line id="cross" x1="0" y1="${P.t}" x2="0" y2="${H - P.b}" stroke="var(--text-muted)" stroke-width="1" opacity="0"/>
+    <circle id="dot" r="4" fill="${stroke}" stroke="var(--surface-1)" stroke-width="2" opacity="0"/>
+    ${state.hist.map((r, i) => ({i, flow: i ? (+r.invested_rub||0) - (+state.hist[i-1].invested_rub||0) : 0}))
+        .filter(o => o.flow > 0)
+        .map(o => `<line x1="${x(o.i)}" y1="${P.t}" x2="${x(o.i)}" y2="${H - P.b}" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>`).join('')}
+    <text x="${P.l}" y="${H - 6}" fill="var(--text-muted)" font-size="11">${pts[0].d}</text>
+    <text x="${W - P.r}" y="${H - 6}" fill="var(--text-muted)" font-size="11" text-anchor="end">${pts[pts.length - 1].d}</text>`;
+
+  const cross = svg.querySelector('#cross'), dot = svg.querySelector('#dot');
+  svg.onpointermove = ev => {
+    const box = svg.getBoundingClientRect();
+    const rel = (ev.clientX - box.left) / box.width * W;
+    let i = Math.round((rel - P.l) / ((W - P.l - P.r) / Math.max(pts.length - 1, 1)));
+    i = Math.max(0, Math.min(pts.length - 1, i));
+    const p = pts[i];
+    cross.setAttribute('x1', x(i)); cross.setAttribute('x2', x(i)); cross.setAttribute('opacity', '.4');
+    dot.setAttribute('cx', x(i)); dot.setAttribute('cy', y(p.v)); dot.setAttribute('opacity', '1');
+    let delta = 0, flow = 0;
+    if (i) {
+      flow = (+state.hist[i].invested_rub || 0) - (+state.hist[i - 1].invested_rub || 0);
+      delta = ((p.v - flow) / pts[i - 1].v - 1) * 100;
+    }
+    tip.innerHTML = `<b>${p.d}</b><br>${money(p.v)}` +
+      (i ? ` <span class="${delta >= 0 ? 'up' : 'down'}">${PCT(delta)}</span>` : '') +
+      (flow > 0 ? `<br><span style="color:var(--text-muted)">пополнение ${RUB.format(flow)} ₽</span>` : '');
+    tip.style.opacity = '1';
+    const px = x(i) / W * box.width;
+    tip.style.left = Math.min(Math.max(px - 50, 0), box.width - 130) + 'px';
+    tip.style.top = Math.max(y(p.v) / H * box.height - 52, 0) + 'px';
+  };
+  svg.onpointerleave = () => {
+    tip.style.opacity = '0'; cross.setAttribute('opacity', '0'); dot.setAttribute('opacity', '0');
+  };
+}
+
+/* ------------------------------------------------------------- состав */
+function renderWeights() {
+  const box = document.getElementById('weights'), pf = state.pf;
+  const card = document.getElementById('weights-card');
+  if (pf && pf.positions && pf.positions.length) {
+    document.getElementById('weights-sub').textContent = 'доля каждой позиции в капитале';
+    box.innerHTML = pf.positions.filter(p => p.weight_pct).map(p => `
+      <div class="bar-row">
+        <span class="sym">${p.symbol}</span>
+        <span class="bar-track"><span class="bar-fill" style="width:${Math.max(p.weight_pct, 1.5)}%;background:${CLASS_COLOR[p.class] || 'var(--series-1)'}"></span></span>
+        <span class="bar-val">${p.weight_pct.toFixed(1)}%</span>
+      </div>`).join('');
+    return;
+  }
+  const plan = (state.planData && state.planData.plan) || null;
+  if (!plan) { card.style.display = 'none'; return; }
+  document.getElementById('weights-sub').textContent = plan.comment;
+  box.innerHTML = plan.targets.map(t => `
+    <div class="plan-item">
+      <span class="plan-pct">${t.target_pct}%</span>
+      <span><b>${t.symbol}</b> <span class="plan-why">${t.why}</span></span>
+    </div>`).join('') +
+    (plan.do_not_touch ? `<div class="warn" style="margin-top:14px">
+       <b style="font-size:13px">Не трогаем</b>
+       <ul>${plan.do_not_touch.map(x => `<li>${x}</li>`).join('')}</ul></div>` : '');
+}
+
+/* ------------------------------------------------------------- позиции */
+function renderPositions() {
+  const pf = state.pf, card = document.getElementById('positions-card');
+  if (!pf || !pf.positions || !pf.positions.length) { card.style.display = 'none'; return; }
+  const rows = pf.positions.map(p => `
+    <tr>
+      <td><div class="tname"><span class="dot" style="background:${CLASS_COLOR[p.class] || 'var(--text-muted)'}"></span>
+        <span><span class="sym">${p.symbol}</span> <span class="full">${p.name || ''}</span></span></div></td>
+      <td>${p.qty == null ? '—' : p.qty}</td>
+      <td>${p.price_rub == null ? '—' : RUB2.format(p.price_rub)}</td>
+      <td>${money(p.value_rub)}</td>
+      ${pctCell(p.pnl_pct)}
+      <td class="${p.pnl_rub >= 0 ? 'up' : 'down'}">${p.pnl_rub == null ? '—' : (p.pnl_rub >= 0 ? '+' : '−') + RUB.format(Math.abs(p.pnl_rub))}</td>
+      ${pctCell(p.chg_24h)}
+    </tr>`).join('');
+  document.getElementById('positions').innerHTML =
+    `<thead><tr><th>Бумага</th><th>Кол-во</th><th>Цена ₽</th><th>Стоимость</th><th>Итог %</th><th>Итог ₽</th><th>Сутки</th></tr></thead><tbody>${rows}</tbody>`;
+}
+
+/* --------------------------------------------------------------- рынок */
+function renderTabs() {
+  const snap = state.snap;
+  if (!snap) return;
+  const classes = [...new Set(Object.values(snap.instruments).map(i => i.class))];
+  document.getElementById('tabs').innerHTML = classes.map(c =>
+    `<button class="tab" role="tab" data-c="${c}" aria-selected="${c === state.tab}">${CLASS_LABEL[c] || c}</button>`).join('');
+  document.querySelectorAll('.tab').forEach(b => b.onclick = () => {
+    state.tab = b.dataset.c; renderTabs(); renderMarket();
+  });
+}
+
+function renderMarket() {
+  const snap = state.snap, table = document.getElementById('market');
+  if (!snap) { table.innerHTML = '<tbody><tr><td class="empty">Котировок ещё нет, первый сбор не прошёл</td></tr></tbody>'; return; }
+  let items = Object.entries(snap.instruments)
+    .filter(([, v]) => v.class === state.tab)
+    .map(([k, v]) => ({symbol: k, ...v}));
+  const {key, dir} = state.sort;
+  items.sort((a, b) => {
+    const av = a[key], bv = b[key];
+    if (av == null) return 1;
+    if (bv == null) return -1;
+    return (av > bv ? 1 : av < bv ? -1 : 0) * dir;
+  });
+  const th = (label, k) =>
+    `<th class="sortable" data-k="${k}">${label}${state.sort.key === k ? (dir < 0 ? ' ↓' : ' ↑') : ''}</th>`;
+  table.innerHTML = `<thead><tr><th>Инструмент</th><th>Цена $</th>${th('Сутки', 'chg_24h')}${th('Неделя', 'chg_7d')}${th('Месяц', 'chg_30d')}<th>Уровень</th></tr></thead>
+    <tbody>${items.map(i => `
+      <tr>
+        <td><div class="tname"><span class="dot" style="background:${CLASS_COLOR[i.class]}"></span>
+          <span><span class="sym">${i.symbol}</span> <span class="full">${i.name || ''}</span></span></div></td>
+        <td>${fmtPrice(i.usd)}</td>
+        ${pctCell(i.chg_24h)}${pctCell(i.chg_7d)}${pctCell(i.chg_30d)}
+        <td class="full">${i.tier || ''}</td>
+      </tr>`).join('')}</tbody>`;
+  table.querySelectorAll('th.sortable').forEach(h => h.onclick = () => {
+    const k = h.dataset.k;
+    state.sort = {key: k, dir: state.sort.key === k ? -state.sort.dir : -1};
+    renderMarket();
+  });
+}
+
+/* ---------------------------------------------------------------- риск */
+function renderRisk() {
+  const pf = state.pf, box = document.getElementById('risk');
+  if (!pf || !pf.risk) { document.getElementById('risk-card').style.display = 'none'; return; }
+  const r = pf.risk;
+  const items = [
+    ['Риск на сделку', r.per_trade_rub, r.per_trade_pct + '% капитала'],
+    ['Дневной лимит убытка', r.daily_limit_rub, r.daily_limit_pct + '% капитала'],
+  ];
+  box.innerHTML = items.map(([label, val, note]) => `
+    <div class="plan-item">
+      <span class="plan-pct">${val == null ? '—' : RUB.format(val) + ' ₽'}</span>
+      <span>${label} <span class="plan-why">${note}</span></span>
+    </div>`).join('');
+}
+
+/* ---------------------------------------------------------------- старт */
+(async function init() {
+  const btn = document.getElementById('theme');
+  btn.onclick = () => {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+    try { localStorage.setItem('tp-theme', dark ? 'light' : 'dark'); } catch (e) {}
+    renderChart();
+  };
+  try {
+    const saved = localStorage.getItem('tp-theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  } catch (e) {}
+
+  const [snap, planData, priceRows] = await Promise.all([
+    loadJSON('data/latest.json'),
+    loadJSON('portfolio.json').then(x => x || loadJSON('portfolio.example.json')),
+    loadCSV('data/prices_daily.csv'),
+  ]);
+  state.snap = snap; state.planData = planData;
+  state.prices = indexPrices(priceRows);
+  if (planData && (planData.trades || []).length) {
+    state.pf = currentState(planData, snap, state.prices);
+    state.hist = equityCurve(planData, state.prices, snap);
+  }
+
+  const stamp = document.getElementById('stamp');
+  if (snap) {
+    const t = new Date(snap.generated_at);
+    const usd = snap.usdrub ? ` · USD/RUB <b>${RUB2.format(snap.usdrub.value)}</b>` : '';
+    stamp.innerHTML = `обновлено <b>${t.toLocaleString('ru-RU', {day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit'})}</b>` +
+      ` · инструментов <b>${Object.keys(snap.instruments).length}</b>${usd}`;
+    state.tab = Object.values(snap.instruments)[0] ? Object.values(snap.instruments)[0].class : 'crypto';
+  } else {
+    stamp.textContent = 'данных пока нет, запусти сбор';
+  }
+
+  renderTiles(); renderChart(); renderWeights(); renderPositions();
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(renderChart, 150); });
+  renderTabs(); renderMarket(); renderRisk();
+})();
+</script>
+</body>
+</html>

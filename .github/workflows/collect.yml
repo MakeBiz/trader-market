@@ -1,0 +1,61 @@
+name: Сбор котировок
+
+on:
+  schedule:
+    # 23:30 UTC = 03:30 Дубай, после закрытия рынка США (дневные свечи уже готовы)
+    - cron: '30 23 * * *'
+    # 11:30 UTC = 15:30 Дубай, дневная сверка по крипте
+    - cron: '30 11 * * *'
+  workflow_dispatch:
+    inputs:
+      check:
+        description: 'Показать, какие тикеры не разрешились'
+        type: boolean
+        default: false
+      backfill:
+        description: 'Догрузить историю за год (запустить один раз при старте)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Самотест
+        run: python3 collector/collect.py --selftest
+
+      - name: Сбор котировок
+        env:
+          COINGECKO_KEY: ${{ secrets.COINGECKO_KEY }}
+        run: |
+          python3 collector/collect.py ${{ inputs.check && '--check' || '' }} ${{ inputs.backfill && '--backfill' || '' }}
+
+      - name: Коммит данных
+        run: |
+          git config user.name  "trader-panel"
+          git config user.email "trader-panel@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "Изменений нет"
+          else
+            git commit -m "данные: $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
+
+      - name: Итог в сводку
+        if: always()
+        run: python3 collector/summary.py >> $GITHUB_STEP_SUMMARY

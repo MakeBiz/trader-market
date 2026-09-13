@@ -1,0 +1,62 @@
+{
+ "generated_at": "2026-09-13T18:13:01+00:00",
+ "usdrub": {
+  "value": 84.22,
+  "previous": 84.1,
+  "date": "2026-09-13"
+ },
+ "counts": {
+  "crypto": 1,
+  "etf": 1
+ },
+ "failed": {},
+ "instruments": {
+  "BTC": {
+   "name": "Bitcoin",
+   "class": "crypto",
+   "tier": "core",
+   "wallet": null,
+   "wallet_earn": null,
+   "date": "2026-09-13",
+   "usd": 77219.2,
+   "rub": 6507875.85,
+   "chg_24h": 0.13,
+   "chg_7d": -2.4,
+   "chg_30d": -8.1,
+   "high_24h": null,
+   "low_24h": null,
+   "ath_pct": null,
+   "volume": null,
+   "history": null,
+   "source": "fixture"
+  },
+  "SPY": {
+   "name": "SPDR S&P 500",
+   "class": "etf",
+   "tier": "core",
+   "wallet": null,
+   "wallet_earn": null,
+   "date": "2026-09-12",
+   "usd": 760.1,
+   "rub": null,
+   "chg_24h": -0.61,
+   "chg_7d": null,
+   "chg_30d": null,
+   "high_24h": null,
+   "low_24h": null,
+   "ath_pct": null,
+   "volume": null,
+   "history": [
+    [
+     "2026-09-11",
+     764.8
+    ],
+    [
+     "2026-09-12",
+     760.1
+    ]
+   ],
+   "source": "fixture"
+  }
+ }
+}

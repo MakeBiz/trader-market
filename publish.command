@@ -50,7 +50,7 @@ git push origin main || fail "Пуш не прошёл. Проверьте gh au
 say "5/5 Запускаю сбор котировок"
 if command -v gh >/dev/null && gh auth status >/dev/null 2>&1; then
   sleep 2
-  if gh workflow run "Сбор котировок" --repo MakeBiz/trader-market -f backfill=true -f check=true; then
+  if gh workflow run "Сбор котировок" --repo MakeBiz/trader-market -f check=true; then
     echo "  запущен, идёт 10-20 минут"
   else
     echo "  не запустился, включите вручную: вкладка Actions, Run workflow"

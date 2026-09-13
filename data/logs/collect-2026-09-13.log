@@ -8,3 +8,97 @@
 [18:13:01] САМОТЕСТ: вселенная
 [18:13:01]   ок, вселенная: crypto=42, equity=29, etf=14, commodity=5, index=4
 [18:13:01] САМОТЕСТ ПРОЙДЕН
+[18:30:20] Старт сбора (с историей за год), 2026-09-13 18:30 UTC
+[18:30:20] Уборка истории: выкинуто 0 строк, осталось 0
+[18:30:20] Разрешаю 1 id через /coins/list
+[18:30:20]   ADI -> adi-token
+[18:30:26] CoinGecko: получено 42 из 42
+[18:30:58] Stooq (equity): получено 0 из 29
+[18:31:13] Stooq (etf): получено 0 из 14
+[18:31:21] Stooq (commodity): получено 0 из 5
+[18:31:25] Stooq (index): получено 0 из 4
+[18:31:25] Догружаю историю крипты за год
+[18:31:26]   история BTC: 366 точек
+[18:31:29]   история ETH: 366 точек
+[18:31:32]   история SOL: 366 точек
+[18:31:35]   история USDT: 366 точек
+[18:31:38]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:31:39]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:31:41]   история XRP не забралась: HTTP Error 429: Too Many Requests
+[18:31:44]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:31:45]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:31:47]   история TRX не забралась: HTTP Error 429: Too Many Requests
+[18:31:50]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:31:51]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:31:53]   история TON не забралась: HTTP Error 429: Too Many Requests
+[18:31:56]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:31:57]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:31:59]   история LINK не забралась: HTTP Error 429: Too Many Requests
+[18:32:02]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:03]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:05]   история ADA не забралась: HTTP Error 429: Too Many Requests
+[18:32:08]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:09]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:11]   история AVAX не забралась: HTTP Error 429: Too Many Requests
+[18:32:14]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:15]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:17]   история DOT не забралась: HTTP Error 429: Too Many Requests
+[18:32:20]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:22]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:24]   история LTC не забралась: HTTP Error 429: Too Many Requests
+[18:32:27]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:28]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:30]   история BCH не забралась: HTTP Error 429: Too Many Requests
+[18:32:33]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:34]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:36]   история XLM не забралась: HTTP Error 429: Too Many Requests
+[18:32:39]   история XMR: 366 точек
+[18:32:42]   история ZEC: 366 точек
+[18:32:45]   история HYPE: 366 точек
+[18:32:48]   история TAO: 366 точек
+[18:32:51]   история SUI: 366 точек
+[18:32:54]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:55]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:32:57]   история NEAR не забралась: HTTP Error 429: Too Many Requests
+[18:33:00]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:01]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:03]   история HBAR не забралась: HTTP Error 429: Too Many Requests
+[18:33:06]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:07]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:10]   история AAVE не забралась: HTTP Error 429: Too Many Requests
+[18:33:13]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:14]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:16]   история UNI не забралась: HTTP Error 429: Too Many Requests
+[18:33:19]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:20]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:22]   история ATOM не забралась: HTTP Error 429: Too Many Requests
+[18:33:25]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:26]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:28]   история ALGO не забралась: HTTP Error 429: Too Many Requests
+[18:33:31]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:32]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:34]   история FIL не забралась: HTTP Error 429: Too Many Requests
+[18:33:37]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:38]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:40]   история ARB не забралась: HTTP Error 429: Too Many Requests
+[18:33:43]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:44]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:46]   история ICP не забралась: HTTP Error 429: Too Many Requests
+[18:33:49]   повтор через 1s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:50]   повтор через 2s после ошибки: HTTP Error 429: Too Many Requests
+[18:33:52]   история ETC не забралась: HTTP Error 429: Too Many Requests
+[18:33:55]   история ONDO: 366 точек
+[18:33:58]   история ENA: 366 точек
+[18:34:02]   история WLD: 366 точек
+[18:34:05]   история KAS: 366 точек
+[18:34:08]   история MNT: 366 точек
+[18:34:11]   история XAUT: 366 точек
+[18:34:14] История: добавлено 5490 строк, всего уникальных ключей 5490
+[18:34:14] ЦБ РФ: USD/RUB = 84.2569
+[18:34:14] История: добавлено 27 строк, всего уникальных ключей 5502
+[18:34:14] Снапшот: 42 инструментов
+[18:34:14] --- НЕ РАЗРЕШИЛИСЬ ---
+[18:34:14] equity: NVDA, AAPL, MSFT, GOOGL, AMZN, TSLA, AVGO, TSM, MU, AMD, MRVL, INTC, ORCL, PLTR, COIN, HOOD, MSTR, CRCL, NBIS, CRWV, LLY, UNH, NVO, XOM, CVX, V, JNJ, PG, NFLX
+[18:34:14] etf: SPY, QQQ, VTI, IWM, IEMG, SLV, PPLT, PALL, XLE, XOP, COPX, URA, TQQQ, TBLL
+[18:34:14] commodity: GOLD, SILVER, PLATINUM, WTI, BRENT
+[18:34:14] index: SPX, NDX, DXY, USDRUB

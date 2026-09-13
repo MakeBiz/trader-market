@@ -23,7 +23,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 28
     steps:
       - uses: actions/checkout@v4
 
@@ -38,6 +38,7 @@ jobs:
         env:
           COINGECKO_KEY: ${{ secrets.COINGECKO_KEY }}
           CG_PAUSE: '7'
+          RUN_BUDGET_MIN: '22'
         run: |
           python3 collector/collect.py --backfill ${{ inputs.check && '--check' || '' }}
 

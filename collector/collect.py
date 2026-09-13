@@ -56,6 +56,16 @@ HISTORY_DAYS = 400
 _log_lines = []
 BACKFILL = False
 backfill_rows = []
+DEADLINE = None          # до какого момента работаем, дальше выходим и пишем что есть
+
+
+def time_left():
+    return 1e9 if DEADLINE is None else DEADLINE - time.time()
+
+
+def out_of_time(reserve=60):
+    """Пора закругляться: оставляем запас на запись и коммит."""
+    return time_left() < reserve
 
 
 def log(msg):
@@ -82,7 +92,7 @@ def http_get(url, params=None, headers=None, retries=3):
         except urllib.error.HTTPError as exc:
             last = exc
             if exc.code == 429:
-                wait = 45 * (attempt + 1)
+                wait = 20 * (attempt + 1)
                 if attempt < retries - 1:
                     log("  лимит запросов, жду %ss" % wait)
                     time.sleep(wait)
@@ -227,6 +237,9 @@ def backfill_crypto(coins, days=365, min_depth=300):
         if depth.get(coin["symbol"], 0) >= min_depth:
             skipped += 1
             continue
+        if out_of_time(90):
+            log("  время вышло, историю доберём следующим прогоном")
+            break
         try:
             raw = http_get(
                 CG_BASE + "/coins/%s/market_chart" % coin["cg"],
@@ -324,6 +337,9 @@ def fetch_daily(items, asset_class):
     d2 = datetime.now(timezone.utc)
     d1 = d2 - timedelta(days=HISTORY_DAYS)
     for item in items:
+        if out_of_time(120):
+            log("  время вышло, остаток класса %s доберём следующим прогоном" % asset_class)
+            break
         candles = []
         used = None
         if item.get("yahoo"):
@@ -555,13 +571,15 @@ def main():
         selftest()
         return 0
 
-    global BACKFILL
+    global BACKFILL, DEADLINE
     BACKFILL = "--backfill" in args
+    budget_min = float(os.environ.get("RUN_BUDGET_MIN", "22"))
+    DEADLINE = time.time() + budget_min * 60
     if "--clean" in args:
         clean_history()
-    log("Старт сбора%s, %s UTC" % (
+    log("Старт сбора%s, %s UTC, бюджет %.0f мин" % (
         " (с историей за год)" if BACKFILL else "",
-        datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")))
+        datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M"), budget_min))
     clean_history()
     uni = load_universe()
     all_rows, reports = [], {}
@@ -589,15 +607,6 @@ def main():
         all_rows += rows
         reports[block] = rep
 
-    if BACKFILL:
-        log("Догружаю историю крипты за год")
-        hist_rows = backfill_crypto(coins)
-        if hist_rows:
-            append_history(hist_rows)
-        if backfill_rows:
-            append_history(backfill_rows)
-            log("История по акциям и товарам: %d точек" % len(backfill_rows))
-
     usdrub = fetch_usdrub()
 
     if not all_rows:
@@ -605,8 +614,22 @@ def main():
         write_log()
         return 1
 
+    # Сначала фиксируем результат, и только потом тратим время на догрузку истории:
+    # если прогон прервут, снапшот уже на месте
     append_history(all_rows)
+    if backfill_rows:
+        append_history(backfill_rows)
+        log("История по акциям и товарам: %d точек" % len(backfill_rows))
     write_latest(all_rows, usdrub, reports)
+
+    if BACKFILL and not out_of_time(120):
+        log("Догружаю историю крипты, осталось времени %.0f мин" % (time_left() / 60))
+        hist_rows = backfill_crypto(coins)
+        if hist_rows:
+            append_history(hist_rows)
+            write_latest(all_rows, usdrub, reports)
+    elif BACKFILL:
+        log("На догрузку истории времени не осталось, доберём следующим прогоном")
 
     if "--check" in args:
         log("--- НЕ РАЗРЕШИЛИСЬ ---")

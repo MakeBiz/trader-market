@@ -6,3 +6,7 @@ data/portfolio_history.csv
 .DS_Store
 __pycache__/
 *.pyc
+
+# Мост к хранилищу: там лежат живые цифры портфеля
+база/
+СИНК-БАЗА.command

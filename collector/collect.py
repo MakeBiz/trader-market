@@ -435,23 +435,33 @@ CSV_FIELDS = ["date", "symbol", "asset_class", "close_usd", "close_rub", "source
 
 
 def append_history(rows):
-    """Дописываем в CSV, не плодя дублей за тот же день и тикер."""
-    existing = set()
+    """Кладём строки в CSV по ключу дата+тикер: новые добавляем, сегодняшние обновляем.
+
+    Раньше строка за текущий день писалась один раз и дальше пропускалась, поэтому
+    в истории оставался первый снимок дня, а не последний. За день цена успевает
+    уйти на проценты, и уровни считались по утренней цифре. Теперь каждый прогон
+    переписывает строку своего дня, и к вечеру там стоит последнее известное значение.
+    """
+    store = {}
     if os.path.exists(PRICES_CSV):
         with open(PRICES_CSV, encoding="utf-8") as fh:
             for row in csv.DictReader(fh):
-                existing.add((row["date"], row["symbol"]))
-    new_rows = [r for r in rows if (r["date"], r["symbol"]) not in existing]
-    write_header = not os.path.exists(PRICES_CSV)
-    with open(PRICES_CSV, "a", encoding="utf-8", newline="") as fh:
+                store[(row["date"], row["symbol"])] = row
+    было = len(store)
+    обновлено = 0
+    for r in rows:
+        ключ = (r["date"], r["symbol"])
+        if ключ in store:
+            обновлено += 1
+        store[ключ] = {k: r.get(k) for k in CSV_FIELDS}
+    добавлено = len(store) - было
+    with open(PRICES_CSV, "w", encoding="utf-8", newline="") as fh:
         writer = csv.DictWriter(fh, fieldnames=CSV_FIELDS)
-        if write_header:
-            writer.writeheader()
-        for row in new_rows:
-            writer.writerow({k: row.get(k) for k in CSV_FIELDS})
-    log("История: добавлено %d строк, всего уникальных ключей %d"
-        % (len(new_rows), len(existing) + len(new_rows)))
-    return len(new_rows)
+        writer.writeheader()
+        writer.writerows([{k: v.get(k) for k in CSV_FIELDS} for v in store.values()])
+    log("История: добавлено %d строк, обновлено %d, всего ключей %d"
+        % (добавлено, обновлено, len(store)))
+    return добавлено
 
 
 def write_latest(rows, usdrub, reports):
@@ -497,13 +507,23 @@ def write_log():
 
 
 def clean_history(bad_sources=("fixture", "selftest")):
-    """Выкидывает из истории строки, попавшие туда из самотеста."""
+    """Чистит историю: строки самотеста и повторы одной пары дата+тикер.
+
+    Повторы появляются не от сборщика, а от git: файл дописывается с двух
+    сторон (робот в Actions и Мак), и слияние оставляет обе пачки строк.
+    Дальше на них спотыкается запись в хранилище, поэтому чиним здесь, у
+    источника: из каждой пары дата+тикер оставляем последнюю строку.
+    """
     if not os.path.exists(PRICES_CSV):
         log("Истории ещё нет, чистить нечего")
         return 0
     with open(PRICES_CSV, encoding="utf-8") as fh:
         rows = list(csv.DictReader(fh))
-    keep = [r for r in rows if r.get("source") not in bad_sources]
+    clean = [r for r in rows if r.get("source") not in bad_sources]
+    unique = {}
+    for r in clean:
+        unique[(r["date"], r["symbol"])] = r
+    keep = list(unique.values())
     dropped = len(rows) - len(keep)
     if dropped:
         with open(PRICES_CSV, "w", encoding="utf-8", newline="") as fh:

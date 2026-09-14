@@ -75,8 +75,13 @@ def log(msg):
     print(line, flush=True)
 
 
-def http_get(url, params=None, headers=None, retries=3):
-    """GET с ретраями. Возвращает текст или бросает исключение."""
+def http_get(url, params=None, headers=None, retries=3, backoff_429=True):
+    """GET с ретраями. backoff_429=False: на 429 сразу сдаёмся, не ждём.
+
+    Для CoinGecko 429 означает «слишком часто, подожди», и ждать имеет смысл.
+    Для Yahoo с адресов GitHub Actions это означает «отсюда не обслуживаем»,
+    и ожидание только съедает бюджет прогона.
+    """
     if params:
         url = url + ("&" if "?" in url else "?") + urllib.parse.urlencode(params)
     hdrs = {"User-Agent": USER_AGENT, "Accept": "*/*"}
@@ -92,6 +97,8 @@ def http_get(url, params=None, headers=None, retries=3):
         except urllib.error.HTTPError as exc:
             last = exc
             if exc.code == 429:
+                if not backoff_429:
+                    raise
                 wait = 20 * (attempt + 1)
                 if attempt < retries - 1:
                     log("  лимит запросов, жду %ss" % wait)
@@ -250,7 +257,8 @@ def backfill_crypto(coins, days=365, min_depth=300):
             for ts, price in series:
                 date = datetime.fromtimestamp(ts / 1000, tz=timezone.utc).strftime("%Y-%m-%d")
                 out.append({
-                    "date": date, "symbol": coin["symbol"], "asset_class": "crypto",
+                    "date": date, "symbol": coin["symbol"],
+                    "asset_class": coin.get("asset_class", "crypto"),
                     "close_usd": price, "close_rub": None, "source": "coingecko:chart",
                 })
             log("  история %s: %d точек" % (coin["symbol"], len(series)))
@@ -294,7 +302,8 @@ def fetch_yahoo_candles(symbol, days=400):
     rng = "1y" if days <= 370 else "2y"
     raw = http_get(YAHOO_CHART + urllib.parse.quote(symbol),
                    params={"range": rng, "interval": "1d"},
-                   headers={"Accept": "application/json"})
+                   headers={"Accept": "application/json"},
+                   retries=1, backoff_429=False)
     data = json.loads(raw)
     result = (data.get("chart") or {}).get("result") or []
     if not result:
@@ -595,6 +604,8 @@ def main():
 
     xs = resolve_xstocks(uni["equity"] + uni["etf"])
     if xs:
+        for coin in xs:
+            coin["asset_class"] = "wallet_token"
         rows, rep = fetch_crypto(xs)
         for row in rows:
             row["asset_class"] = "wallet_token"
@@ -623,8 +634,8 @@ def main():
     write_latest(all_rows, usdrub, reports)
 
     if BACKFILL and not out_of_time(120):
-        log("Догружаю историю крипты, осталось времени %.0f мин" % (time_left() / 60))
-        hist_rows = backfill_crypto(coins)
+        log("Догружаю историю, осталось времени %.0f мин" % (time_left() / 60))
+        hist_rows = backfill_crypto(coins + xs)
         if hist_rows:
             append_history(hist_rows)
             write_latest(all_rows, usdrub, reports)

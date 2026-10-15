@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T15:20:43+00:00",
+ "generated_at": "2026-10-15T23:17:20+00:00",
  "usdrub": {
   "value": 83.76,
   "previous": 83.9497,
@@ -8,7 +8,7 @@
  "counts": {
   "crypto": 42,
   "wallet_token": 34,
-  "equity": 0,
+  "equity": 1,
   "etf": 0,
   "commodity": 0,
   "index": 0
@@ -37,7 +37,6 @@
    "HOOD",
    "MSTR",
    "CRCL",
-   "NBIS",
    "CRWV",
    "LLY",
    "UNH",
@@ -87,15 +86,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 82162,
-   "rub": 6890944,
-   "chg_24h": 0.5297,
-   "chg_7d": -0.3811,
-   "chg_30d": 6.855,
-   "high_24h": 82011,
+   "usd": 82190,
+   "rub": 6892556,
+   "chg_24h": 0.83618,
+   "chg_7d": 0.9457,
+   "chg_30d": 9.31,
+   "high_24h": 82508,
    "low_24h": 79806,
-   "ath_pct": -34.83362,
-   "volume": 40476166716,
+   "ath_pct": -34.81084,
+   "volume": 40544860694,
    "history": null,
    "source": "coingecko"
   },
@@ -106,15 +105,15 @@
    "wallet": null,
    "wallet_earn": 4.37,
    "date": "2026-10-15",
-   "usd": 2419.62,
-   "rub": 202935,
-   "chg_24h": -0.26066,
-   "chg_7d": -4.9896,
-   "chg_30d": -2.3595,
-   "high_24h": 2451.03,
+   "usd": 2444.86,
+   "rub": 205028,
+   "chg_24h": 1.19257,
+   "chg_7d": -0.9411,
+   "chg_30d": 2.7169,
+   "high_24h": 2463.31,
    "low_24h": 2324.97,
-   "ath_pct": -51.07964,
-   "volume": 19502551584,
+   "ath_pct": -50.56938,
+   "volume": 19177465031,
    "history": null,
    "source": "coingecko"
   },
@@ -125,15 +124,15 @@
    "wallet": null,
    "wallet_earn": 9.0,
    "date": "2026-10-15",
-   "usd": 0.999086,
+   "usd": 0.999142,
    "rub": 83.79,
-   "chg_24h": -0.0183,
-   "chg_7d": -0.021,
-   "chg_30d": -0.0527,
-   "high_24h": 0.999377,
+   "chg_24h": 0.00143,
+   "chg_7d": -0.0154,
+   "chg_30d": -0.0255,
+   "high_24h": 0.999244,
    "low_24h": 0.998949,
-   "ath_pct": -24.48874,
-   "volume": 73555008774,
+   "ath_pct": -24.48449,
+   "volume": 73246739942,
    "history": null,
    "source": "coingecko"
   },
@@ -145,14 +144,14 @@
    "wallet_earn": null,
    "date": "2026-10-15",
    "usd": 1.33,
-   "rub": 111.78,
-   "chg_24h": 0.21497,
-   "chg_7d": -5.2575,
-   "chg_30d": -6.3224,
-   "high_24h": 1.34,
+   "rub": 111.89,
+   "chg_24h": 0.20583,
+   "chg_7d": -2.6459,
+   "chg_30d": 4.9234,
+   "high_24h": 1.35,
    "low_24h": 1.29,
-   "ath_pct": -63.44821,
-   "volume": 2455667655,
+   "ath_pct": -63.40826,
+   "volume": 2283514617,
    "history": null,
    "source": "coingecko"
   },
@@ -163,15 +162,15 @@
    "wallet": null,
    "wallet_earn": 15.03,
    "date": "2026-10-15",
-   "usd": 105.46,
-   "rub": 8845.24,
-   "chg_24h": 1.61095,
-   "chg_7d": -6.6201,
-   "chg_30d": 4.2923,
-   "high_24h": 105.22,
+   "usd": 105.43,
+   "rub": 8841.65,
+   "chg_24h": 0.98923,
+   "chg_7d": -4.3652,
+   "chg_30d": 9.584,
+   "high_24h": 106.33,
    "low_24h": 100.99,
-   "ath_pct": -64.04403,
-   "volume": 4253028847,
+   "ath_pct": -64.05449,
+   "volume": 4196921362,
    "history": null,
    "source": "coingecko"
   },
@@ -182,15 +181,15 @@
    "wallet": null,
    "wallet_earn": 13.65,
    "date": "2026-10-15",
-   "usd": 0.330227,
-   "rub": 27.7,
-   "chg_24h": -0.91596,
-   "chg_7d": -1.3828,
-   "chg_30d": -2.3426,
-   "high_24h": 0.334445,
+   "usd": 0.331977,
+   "rub": 27.84,
+   "chg_24h": -0.00258,
+   "chg_7d": -0.2681,
+   "chg_30d": -0.1031,
+   "high_24h": 0.332902,
    "low_24h": 0.329338,
-   "ath_pct": -23.43247,
-   "volume": 442259658,
+   "ath_pct": -23.02662,
+   "volume": 428842081,
    "history": null,
    "source": "coingecko"
   },
@@ -201,15 +200,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 1149.61,
-   "rub": 96418,
-   "chg_24h": -0.73049,
-   "chg_7d": -6.326,
-   "chg_30d": 0.0219,
-   "high_24h": 1171.79,
+   "usd": 1223.63,
+   "rub": 102615,
+   "chg_24h": 7.0636,
+   "chg_7d": 3.5266,
+   "chg_30d": 11.2647,
+   "high_24h": 1251.93,
    "low_24h": 1077.27,
-   "ath_pct": -63.98395,
-   "volume": 1171506584,
+   "ath_pct": -61.6648,
+   "volume": 1467121202,
    "history": null,
    "source": "coingecko"
   },
@@ -220,15 +219,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 80.93,
-   "rub": 6787.8,
-   "chg_24h": 0.7673,
-   "chg_7d": -5.35,
-   "chg_30d": 2.2465,
-   "high_24h": 81.96,
+   "usd": 81.89,
+   "rub": 6867.68,
+   "chg_24h": 1.22077,
+   "chg_7d": -2.7684,
+   "chg_30d": 7.4232,
+   "high_24h": 82.51,
    "low_24h": 77.55,
-   "ath_pct": -17.38518,
-   "volume": 952341680,
+   "ath_pct": -16.40322,
+   "volume": 940013812,
    "history": null,
    "source": "coingecko"
   },
@@ -239,15 +238,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 0.08045,
-   "rub": 6.75,
-   "chg_24h": -1.92311,
-   "chg_7d": -8.1605,
-   "chg_30d": -3.5112,
-   "high_24h": 0.083111,
+   "usd": 0.081031,
+   "rub": 6.8,
+   "chg_24h": -1.04502,
+   "chg_7d": -3.4154,
+   "chg_30d": 2.3327,
+   "high_24h": 0.081958,
    "low_24h": 0.077935,
-   "ath_pct": -89.00325,
-   "volume": 1517836166,
+   "ath_pct": -88.9238,
+   "volume": 1488069459,
    "history": null,
    "source": "coingecko"
   },
@@ -258,15 +257,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 541.28,
-   "rub": 45397,
-   "chg_24h": -1.14053,
-   "chg_7d": -1.8154,
-   "chg_30d": 3.9141,
-   "high_24h": 554.46,
+   "usd": 546.22,
+   "rub": 45806,
+   "chg_24h": -1.30887,
+   "chg_7d": 1.6481,
+   "chg_30d": 9.1144,
+   "high_24h": 554.24,
    "low_24h": 527.91,
-   "ath_pct": -32.14794,
-   "volume": 106051962,
+   "ath_pct": -31.52877,
+   "volume": 103273264,
    "history": null,
    "source": "coingecko"
   },
@@ -277,15 +276,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 12.46,
-   "rub": 1045.37,
-   "chg_24h": 0.71549,
-   "chg_7d": -4.5592,
-   "chg_30d": 8.4244,
-   "high_24h": 12.61,
+   "usd": 12.47,
+   "rub": 1045.94,
+   "chg_24h": 0.47329,
+   "chg_7d": -1.6748,
+   "chg_30d": 15.1219,
+   "high_24h": 12.59,
    "low_24h": 11.83,
-   "ath_pct": -76.3474,
-   "volume": 428572570,
+   "ath_pct": -76.33164,
+   "volume": 430276882,
    "history": null,
    "source": "coingecko"
   },
@@ -296,15 +295,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 0.228287,
-   "rub": 19.15,
-   "chg_24h": 0.43403,
-   "chg_7d": -8.1299,
-   "chg_30d": 10.7728,
-   "high_24h": 0.231059,
+   "usd": 0.229643,
+   "rub": 19.26,
+   "chg_24h": 0.03133,
+   "chg_7d": -1.3826,
+   "chg_30d": 18.8116,
+   "high_24h": 0.2319,
    "low_24h": 0.217472,
-   "ath_pct": -92.60468,
-   "volume": 485359656,
+   "ath_pct": -92.56075,
+   "volume": 513805680,
    "history": null,
    "source": "coingecko"
   },
@@ -315,15 +314,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 5.01,
-   "rub": 420.37,
-   "chg_24h": 1.97673,
-   "chg_7d": -0.6507,
-   "chg_30d": 108.0236,
-   "high_24h": 4.97,
+   "usd": 5.25,
+   "rub": 440.32,
+   "chg_24h": 7.43269,
+   "chg_7d": 17.4134,
+   "chg_30d": 130.0171,
+   "high_24h": 5.43,
    "low_24h": 4.54,
-   "ath_pct": -75.47685,
-   "volume": 1132336321,
+   "ath_pct": -74.30985,
+   "volume": 1351845472,
    "history": null,
    "source": "coingecko"
   },
@@ -334,15 +333,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 0.184938,
-   "rub": 15.51,
-   "chg_24h": 1.18139,
-   "chg_7d": -7.3088,
-   "chg_30d": -6.2063,
+   "usd": 0.18318,
+   "rub": 15.36,
+   "chg_24h": -0.08779,
+   "chg_7d": -4.5877,
+   "chg_30d": 5.0653,
    "high_24h": 0.278245,
    "low_24h": 0.177112,
-   "ath_pct": -78.87781,
-   "volume": 188319826,
+   "ath_pct": -79.0786,
+   "volume": 175243107,
    "history": null,
    "source": "coingecko"
   },
@@ -353,15 +352,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 276.78,
-   "rub": 23214,
-   "chg_24h": 3.57091,
-   "chg_7d": -7.0733,
-   "chg_30d": 22.2614,
-   "high_24h": 275.26,
+   "usd": 277.11,
+   "rub": 23238,
+   "chg_24h": 3.46561,
+   "chg_7d": -1.568,
+   "chg_30d": 29.9422,
+   "high_24h": 279.9,
    "low_24h": 257.71,
-   "ath_pct": -92.68893,
-   "volume": 172004562,
+   "ath_pct": -92.68038,
+   "volume": 178337350,
    "history": null,
    "source": "coingecko"
   },
@@ -372,15 +371,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 59.93,
-   "rub": 5026.76,
-   "chg_24h": 1.42293,
-   "chg_7d": -7.1893,
-   "chg_30d": 13.4141,
-   "high_24h": 59.97,
+   "usd": 60.65,
+   "rub": 5085.9,
+   "chg_24h": 2.15024,
+   "chg_7d": -3.8588,
+   "chg_30d": 19.2618,
+   "high_24h": 60.87,
    "low_24h": 57.36,
-   "ath_pct": -85.39113,
-   "volume": 293155938,
+   "ath_pct": -85.21754,
+   "volume": 291524726,
    "history": null,
    "source": "coingecko"
   },
@@ -391,15 +390,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 7.44,
-   "rub": 623.97,
-   "chg_24h": 3.79766,
-   "chg_7d": -2.639,
-   "chg_30d": 13.9812,
-   "high_24h": 7.41,
+   "usd": 7.4,
+   "rub": 620.97,
+   "chg_24h": 3.61366,
+   "chg_7d": 1.3648,
+   "chg_30d": 20.0362,
+   "high_24h": 7.62,
    "low_24h": 6.82,
-   "ath_pct": -83.43659,
-   "volume": 624647404,
+   "ath_pct": -83.51432,
+   "volume": 665805594,
    "history": null,
    "source": "coingecko"
   },
@@ -410,15 +409,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 9.98,
-   "rub": 837.18,
-   "chg_24h": 1.27826,
-   "chg_7d": -6.5278,
-   "chg_30d": 31.2927,
-   "high_24h": 10.05,
+   "usd": 10.03,
+   "rub": 841.01,
+   "chg_24h": 0.19846,
+   "chg_7d": -0.1958,
+   "chg_30d": 39.1182,
+   "high_24h": 10.07,
    "low_24h": 9.42,
-   "ath_pct": -93.11424,
-   "volume": 390296701,
+   "ath_pct": -93.08195,
+   "volume": 396973729,
    "history": null,
    "source": "coingecko"
   },
@@ -429,15 +428,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 1.016,
-   "rub": 85.22,
-   "chg_24h": 0.76065,
-   "chg_7d": -7.8942,
-   "chg_30d": 42.151,
-   "high_24h": 1.035,
+   "usd": 1.034,
+   "rub": 86.68,
+   "chg_24h": 0.70164,
+   "chg_7d": -1.068,
+   "chg_30d": 53.049,
+   "high_24h": 1.041,
    "low_24h": 0.960866,
-   "ath_pct": -80.99468,
-   "volume": 915851983,
+   "ath_pct": -80.66835,
+   "volume": 1017651359,
    "history": null,
    "source": "coingecko"
   },
@@ -449,14 +448,14 @@
    "wallet_earn": 12.32,
    "date": "2026-10-15",
    "usd": 1.38,
-   "rub": 115.36,
-   "chg_24h": 1.61593,
-   "chg_7d": -3.4204,
-   "chg_30d": 2.075,
-   "high_24h": 1.37,
+   "rub": 115.91,
+   "chg_24h": 1.7913,
+   "chg_7d": -0.5173,
+   "chg_30d": 4.9184,
+   "high_24h": 1.39,
    "low_24h": 1.31,
-   "ath_pct": -83.33572,
-   "volume": 43695414,
+   "ath_pct": -83.25309,
+   "volume": 46587585,
    "history": null,
    "source": "coingecko"
   },
@@ -467,15 +466,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 0.083206,
-   "rub": 6.98,
-   "chg_24h": -0.83488,
-   "chg_7d": -12.2007,
-   "chg_30d": 5.24,
-   "high_24h": 0.085131,
+   "usd": 0.08504,
+   "rub": 7.13,
+   "chg_24h": 0.78705,
+   "chg_7d": -6.5302,
+   "chg_30d": 14.2197,
+   "high_24h": 0.085454,
    "low_24h": 0.080322,
-   "ath_pct": -85.38276,
-   "volume": 129837041,
+   "ath_pct": -85.06055,
+   "volume": 141035127,
    "history": null,
    "source": "coingecko"
   },
@@ -486,15 +485,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 4148.0,
-   "rub": 347895,
-   "chg_24h": 1.46147,
-   "chg_7d": 0.5754,
-   "chg_30d": -3.3361,
-   "high_24h": 4158.05,
-   "low_24h": 4076.17,
-   "ath_pct": -24.64509,
-   "volume": 292393705,
+   "usd": 4157.28,
+   "rub": 348633,
+   "chg_24h": 1.42132,
+   "chg_7d": 0.6899,
+   "chg_30d": -3.1415,
+   "high_24h": 4168.76,
+   "low_24h": 4108.88,
+   "ath_pct": -24.47644,
+   "volume": 229649169,
    "history": null,
    "source": "coingecko"
   },
@@ -505,15 +504,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 270.21,
-   "rub": 22663,
-   "chg_24h": 0.88203,
-   "chg_7d": -3.8215,
-   "chg_30d": 19.1116,
-   "high_24h": 274.58,
+   "usd": 278.41,
+   "rub": 23348,
+   "chg_24h": 2.67372,
+   "chg_7d": 3.5982,
+   "chg_30d": 28.6303,
+   "high_24h": 280.26,
    "low_24h": 256.49,
-   "ath_pct": -64.33352,
-   "volume": 189151990,
+   "ath_pct": -63.2509,
+   "volume": 202696779,
    "history": null,
    "source": "coingecko"
   },
@@ -524,15 +523,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 5.09e-06,
-   "rub": 0.00042686,
-   "chg_24h": 1.31361,
-   "chg_7d": -6.2319,
-   "chg_30d": -2.1323,
-   "high_24h": 5.11e-06,
+   "usd": 5.12e-06,
+   "rub": 0.00042903,
+   "chg_24h": 0.77852,
+   "chg_7d": -3.4004,
+   "chg_30d": 4.6626,
+   "high_24h": 5.15e-06,
    "low_24h": 4.86e-06,
-   "ath_pct": -94.09294,
-   "volume": 74179589,
+   "ath_pct": -94.06216,
+   "volume": 77263423,
    "history": null,
    "source": "coingecko"
   },
@@ -543,15 +542,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 0.197213,
-   "rub": 16.54,
-   "chg_24h": 1.0087,
-   "chg_7d": -10.0871,
-   "chg_30d": 35.9485,
-   "high_24h": 0.20017,
+   "usd": 0.203687,
+   "rub": 17.08,
+   "chg_24h": 3.32182,
+   "chg_7d": -1.0091,
+   "chg_30d": 48.8291,
+   "high_24h": 0.206619,
    "low_24h": 0.182869,
-   "ath_pct": -87.00581,
-   "volume": 459477459,
+   "ath_pct": -86.57922,
+   "volume": 519982725,
    "history": null,
    "source": "coingecko"
   },
@@ -562,15 +561,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 154.28,
-   "rub": 12939.3,
-   "chg_24h": -0.78678,
-   "chg_7d": -9.9192,
-   "chg_30d": 20.2303,
-   "high_24h": 158.27,
+   "usd": 157.14,
+   "rub": 13177.98,
+   "chg_24h": 2.13077,
+   "chg_7d": -5.641,
+   "chg_30d": 30.7107,
+   "high_24h": 159.01,
    "low_24h": 147.4,
-   "ath_pct": -76.68429,
-   "volume": 279320242,
+   "ath_pct": -76.25145,
+   "volume": 299310988,
    "history": null,
    "source": "coingecko"
   },
@@ -581,15 +580,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 0.452696,
-   "rub": 37.97,
-   "chg_24h": 1.78574,
-   "chg_7d": -9.1078,
-   "chg_30d": 28.454,
-   "high_24h": 0.451656,
+   "usd": 0.465774,
+   "rub": 39.06,
+   "chg_24h": 4.25144,
+   "chg_7d": -3.2347,
+   "chg_30d": 42.7217,
+   "high_24h": 0.471293,
    "low_24h": 0.423074,
-   "ath_pct": -78.84753,
-   "volume": 185448846,
+   "ath_pct": -78.23644,
+   "volume": 209959227,
    "history": null,
    "source": "coingecko"
   },
@@ -600,34 +599,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 0.00449976,
-   "rub": 0.377397,
-   "chg_24h": -5.70634,
-   "chg_7d": -23.0887,
-   "chg_30d": 23.4827,
+   "usd": 0.00452971,
+   "rub": 0.379865,
+   "chg_24h": -4.72822,
+   "chg_7d": -19.632,
+   "chg_30d": 30.3868,
    "high_24h": 0.00480224,
    "low_24h": 0.00423819,
-   "ath_pct": -48.97704,
-   "volume": 291255092,
-   "history": null,
-   "source": "coingecko"
-  },
-  "WLD": {
-   "name": "Worldcoin",
-   "class": "crypto",
-   "tier": "spec",
-   "wallet": null,
-   "wallet_earn": null,
-   "date": "2026-10-15",
-   "usd": 0.493961,
-   "rub": 41.43,
-   "chg_24h": 1.48537,
-   "chg_7d": -4.1909,
-   "chg_30d": 30.1228,
-   "high_24h": 0.499509,
-   "low_24h": 0.463936,
-   "ath_pct": -95.79272,
-   "volume": 243591285,
+   "ath_pct": -48.63737,
+   "volume": 277064365,
    "history": null,
    "source": "coingecko"
   },
@@ -638,15 +618,34 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 1.1,
-   "rub": 92.29,
-   "chg_24h": -1.76724,
-   "chg_7d": -1.2334,
-   "chg_30d": 10.2965,
+   "usd": 1.15,
+   "rub": 96.15,
+   "chg_24h": -0.08589,
+   "chg_7d": 5.5921,
+   "chg_30d": 22.4694,
    "high_24h": 1.16,
    "low_24h": 1.05,
-   "ath_pct": -97.9985,
-   "volume": 167059854,
+   "ath_pct": -97.9146,
+   "volume": 190756908,
+   "history": null,
+   "source": "coingecko"
+  },
+  "WLD": {
+   "name": "Worldcoin",
+   "class": "crypto",
+   "tier": "spec",
+   "wallet": null,
+   "wallet_earn": null,
+   "date": "2026-10-15",
+   "usd": 0.501742,
+   "rub": 42.08,
+   "chg_24h": 1.11407,
+   "chg_7d": 4.6949,
+   "chg_30d": 39.8035,
+   "high_24h": 0.510089,
+   "low_24h": 0.463936,
+   "ath_pct": -95.72644,
+   "volume": 276047841,
    "history": null,
    "source": "coingecko"
   },
@@ -657,15 +656,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 0.057626,
-   "rub": 4.83,
-   "chg_24h": 1.72569,
-   "chg_7d": 3.0214,
-   "chg_30d": 0.3208,
-   "high_24h": 0.057589,
+   "usd": 0.057294,
+   "rub": 4.8,
+   "chg_24h": 0.58567,
+   "chg_7d": 4.7781,
+   "chg_30d": 0.6761,
+   "high_24h": 0.058083,
    "low_24h": 0.055759,
-   "ath_pct": -82.6081,
-   "volume": 29845416,
+   "ath_pct": -82.70822,
+   "volume": 28693201,
    "history": null,
    "source": "coingecko"
   },
@@ -676,15 +675,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 0.527041,
-   "rub": 44.2,
-   "chg_24h": 1.27345,
-   "chg_7d": -8.8421,
-   "chg_30d": -5.4273,
-   "high_24h": 0.526628,
+   "usd": 0.530477,
+   "rub": 44.49,
+   "chg_24h": 1.6594,
+   "chg_7d": -4.1922,
+   "chg_30d": -1.347,
+   "high_24h": 0.532141,
    "low_24h": 0.508539,
-   "ath_pct": -81.54007,
-   "volume": 30861216,
+   "ath_pct": -81.41973,
+   "volume": 31612778,
    "history": null,
    "source": "coingecko"
   },
@@ -695,15 +694,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 4.1e-06,
-   "rub": 0.00034364,
-   "chg_24h": 1.91777,
-   "chg_7d": 0.26,
-   "chg_30d": 16.2876,
-   "high_24h": 4.13e-06,
+   "usd": 4.09e-06,
+   "rub": 0.00034311,
+   "chg_24h": 0.04376,
+   "chg_7d": 7.3216,
+   "chg_30d": 24.0908,
+   "high_24h": 4.2e-06,
    "low_24h": 3.83e-06,
-   "ath_pct": -85.38143,
-   "volume": 324210433,
+   "ath_pct": -85.40231,
+   "volume": 336807858,
    "history": null,
    "source": "coingecko"
   },
@@ -714,34 +713,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 3.02,
-   "rub": 252.88,
-   "chg_24h": 0.78594,
-   "chg_7d": -3.3797,
-   "chg_30d": 17.4237,
-   "high_24h": 3.07,
+   "usd": 3.05,
+   "rub": 256.11,
+   "chg_24h": -0.38981,
+   "chg_7d": 4.2969,
+   "chg_30d": 24.8839,
+   "high_24h": 3.1,
    "low_24h": 2.86,
-   "ath_pct": -99.56967,
-   "volume": 65372275,
-   "history": null,
-   "source": "coingecko"
-  },
-  "ETC": {
-   "name": "Ethereum Classic",
-   "class": "crypto",
-   "tier": "spec",
-   "wallet": null,
-   "wallet_earn": null,
-   "date": "2026-10-15",
-   "usd": 7.98,
-   "rub": 669.44,
-   "chg_24h": 0.83736,
-   "chg_7d": -5.2524,
-   "chg_30d": 7.2054,
-   "high_24h": 8.07,
-   "low_24h": 7.55,
-   "ath_pct": -95.22292,
-   "volume": 66594386,
+   "ath_pct": -99.56412,
+   "volume": 76886923,
    "history": null,
    "source": "coingecko"
   },
@@ -752,15 +732,34 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 0.185213,
-   "rub": 15.53,
-   "chg_24h": 2.77683,
-   "chg_7d": -0.663,
-   "chg_30d": 29.6343,
-   "high_24h": 0.186247,
+   "usd": 0.194791,
+   "rub": 16.34,
+   "chg_24h": 7.47288,
+   "chg_7d": 13.1507,
+   "chg_30d": 35.7459,
+   "high_24h": 0.196272,
    "low_24h": 0.171555,
-   "ath_pct": -92.2514,
-   "volume": 202272781,
+   "ath_pct": -91.85072,
+   "volume": 235696625,
+   "history": null,
+   "source": "coingecko"
+  },
+  "ETC": {
+   "name": "Ethereum Classic",
+   "class": "crypto",
+   "tier": "spec",
+   "wallet": null,
+   "wallet_earn": null,
+   "date": "2026-10-15",
+   "usd": 8.0,
+   "rub": 670.91,
+   "chg_24h": 0.23823,
+   "chg_7d": -0.2933,
+   "chg_30d": 12.3486,
+   "high_24h": 8.09,
+   "low_24h": 7.55,
+   "ath_pct": -95.21186,
+   "volume": 68428935,
    "history": null,
    "source": "coingecko"
   },
@@ -771,15 +770,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 0.113569,
-   "rub": 9.53,
-   "chg_24h": -2.11917,
-   "chg_7d": -6.9739,
-   "chg_30d": 18.0811,
-   "high_24h": 0.118072,
+   "usd": 0.118386,
+   "rub": 9.93,
+   "chg_24h": 2.55944,
+   "chg_7d": -0.4241,
+   "chg_30d": 33.4381,
+   "high_24h": 0.118264,
    "low_24h": 0.107536,
-   "ath_pct": -96.81091,
-   "volume": 60727362,
+   "ath_pct": -96.67563,
+   "volume": 66680744,
    "history": null,
    "source": "coingecko"
   },
@@ -790,34 +789,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 0.03585721,
-   "rub": 3.01,
-   "chg_24h": -3.0722,
-   "chg_7d": -9.8996,
-   "chg_30d": 4.5327,
-   "high_24h": 0.03774052,
+   "usd": 0.03598998,
+   "rub": 3.02,
+   "chg_24h": -2.60066,
+   "chg_7d": -8.0844,
+   "chg_30d": 11.2522,
+   "high_24h": 0.03706058,
    "low_24h": 0.03426296,
-   "ath_pct": -82.71201,
-   "volume": 19177372,
-   "history": null,
-   "source": "coingecko"
-  },
-  "ATOM": {
-   "name": "Cosmos",
-   "class": "crypto",
-   "tier": "spec",
-   "wallet": null,
-   "wallet_earn": null,
-   "date": "2026-10-15",
-   "usd": 1.71,
-   "rub": 143.83,
-   "chg_24h": -1.9336,
-   "chg_7d": -6.2116,
-   "chg_30d": 9.3613,
-   "high_24h": 1.77,
-   "low_24h": 1.65,
-   "ath_pct": -96.08858,
-   "volume": 60245129,
+   "ath_pct": -82.64799,
+   "volume": 20487418,
    "history": null,
    "source": "coingecko"
   },
@@ -828,15 +808,34 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 1.065,
-   "rub": 89.34,
-   "chg_24h": -2.08873,
-   "chg_7d": -2.9719,
-   "chg_30d": 19.928,
-   "high_24h": 1.1,
+   "usd": 1.17,
+   "rub": 97.99,
+   "chg_24h": 6.41866,
+   "chg_7d": 8.4008,
+   "chg_30d": 45.2981,
+   "high_24h": 1.2,
    "low_24h": 1.005,
-   "ath_pct": -99.55026,
-   "volume": 189641647,
+   "ath_pct": -99.5066,
+   "volume": 262951445,
+   "history": null,
+   "source": "coingecko"
+  },
+  "ATOM": {
+   "name": "Cosmos",
+   "class": "crypto",
+   "tier": "spec",
+   "wallet": null,
+   "wallet_earn": null,
+   "date": "2026-10-15",
+   "usd": 1.75,
+   "rub": 146.53,
+   "chg_24h": -1.32614,
+   "chg_7d": -0.4991,
+   "chg_30d": 16.3108,
+   "high_24h": 1.77,
+   "low_24h": 1.65,
+   "ath_pct": -96.01473,
+   "volume": 64015992,
    "history": null,
    "source": "coingecko"
   },
@@ -847,15 +846,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 1.86,
-   "rub": 156.39,
-   "chg_24h": 0.69709,
-   "chg_7d": 0.8638,
-   "chg_30d": -5.5545,
-   "high_24h": 1.91,
+   "usd": 1.88,
+   "rub": 157.8,
+   "chg_24h": -0.1185,
+   "chg_7d": 3.0811,
+   "chg_30d": 1.5019,
+   "high_24h": 1.89,
    "low_24h": 1.76,
-   "ath_pct": -97.46064,
-   "volume": 194697539,
+   "ath_pct": -97.43746,
+   "volume": 195607397,
    "history": null,
    "source": "coingecko"
   },
@@ -866,15 +865,15 @@
    "wallet": null,
    "wallet_earn": 25.0,
    "date": "2026-10-15",
-   "usd": 8.32,
-   "rub": 697.57,
-   "chg_24h": -1.38297,
-   "chg_7d": 1.997,
-   "chg_30d": -4.2826,
-   "high_24h": 8.43,
+   "usd": 8.31,
+   "rub": 697.19,
+   "chg_24h": -1.00802,
+   "chg_7d": 1.5404,
+   "chg_30d": -5.2343,
+   "high_24h": 8.41,
    "low_24h": 8.31,
-   "ath_pct": -6.42166,
-   "volume": 3456453,
+   "ath_pct": -6.46279,
+   "volume": 3803891,
    "history": null,
    "source": "coingecko"
   },
@@ -885,15 +884,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 146.18,
-   "rub": 12271.58,
-   "chg_24h": 0.72995,
-   "chg_7d": -3.2753,
-   "chg_30d": 10.7017,
-   "high_24h": 145.57,
+   "usd": 148.57,
+   "rub": 12463.51,
+   "chg_24h": 4.53522,
+   "chg_7d": -1.7188,
+   "chg_30d": 16.4261,
+   "high_24h": 151.5,
    "low_24h": 135.49,
-   "ath_pct": -68.38368,
-   "volume": 3563952,
+   "ath_pct": -67.8652,
+   "volume": 4680398,
    "history": null,
    "source": "coingecko"
   },
@@ -904,15 +903,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 85.04,
-   "rub": 7143.18,
-   "chg_24h": 7.50135,
-   "chg_7d": 4.7055,
-   "chg_30d": -6.7931,
-   "high_24h": 84.02,
+   "usd": 85.79,
+   "rub": 7194.93,
+   "chg_24h": 11.21982,
+   "chg_7d": 5.8273,
+   "chg_30d": 1.375,
+   "high_24h": 87.57,
    "low_24h": 75.79,
-   "ath_pct": -66.92502,
-   "volume": 32670856,
+   "ath_pct": -66.63458,
+   "volume": 33710807,
    "history": null,
    "source": "coingecko"
   },
@@ -923,15 +922,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 362.36,
+   "usd": 362.48,
    "rub": 30397,
-   "chg_24h": -1.3841,
-   "chg_7d": -3.0173,
-   "chg_30d": 0.5174,
-   "high_24h": 368.13,
+   "chg_24h": -0.62695,
+   "chg_7d": -3.2512,
+   "chg_30d": 2.0154,
+   "high_24h": 365.8,
    "low_24h": 355.67,
-   "ath_pct": -27.02565,
-   "volume": 9342897,
+   "ath_pct": -27.00053,
+   "volume": 10157830,
    "history": null,
    "source": "coingecko"
   },
@@ -942,15 +941,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 773.79,
-   "rub": 64910,
-   "chg_24h": -0.20737,
-   "chg_7d": -0.8057,
-   "chg_30d": 1.2655,
-   "high_24h": 774.94,
+   "usd": 774.49,
+   "rub": 64933,
+   "chg_24h": 0.24432,
+   "chg_7d": -0.4723,
+   "chg_30d": 1.7253,
+   "high_24h": 775.92,
    "low_24h": 769.21,
-   "ath_pct": -1.56646,
-   "volume": 8912782,
+   "ath_pct": -1.47741,
+   "volume": 10168353,
    "history": null,
    "source": "coingecko"
   },
@@ -961,15 +960,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 216.76,
-   "rub": 18196.89,
-   "chg_24h": -3.18402,
-   "chg_7d": -7.3414,
-   "chg_30d": 1.5795,
-   "high_24h": 223.02,
+   "usd": 217.54,
+   "rub": 18230.32,
+   "chg_24h": -0.79558,
+   "chg_7d": -5.9835,
+   "chg_30d": 2.3481,
+   "high_24h": 220.19,
    "low_24h": 213.73,
-   "ath_pct": -11.00367,
-   "volume": 13970074,
+   "ath_pct": -10.6833,
+   "volume": 13635435,
    "history": null,
    "source": "coingecko"
   },
@@ -980,15 +979,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 725.78,
-   "rub": 60877,
-   "chg_24h": -1.39785,
-   "chg_7d": -3.9815,
-   "chg_30d": 2.1063,
-   "high_24h": 735.16,
+   "usd": 728.03,
+   "rub": 61051,
+   "chg_24h": 0.16639,
+   "chg_7d": -2.8639,
+   "chg_30d": 3.1159,
+   "high_24h": 730.05,
    "low_24h": 718.01,
-   "ath_pct": -63.97686,
-   "volume": 2824735,
+   "ath_pct": -63.86487,
+   "volume": 2943970,
    "history": null,
    "source": "coingecko"
   },
@@ -999,15 +998,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 350.81,
-   "rub": 29427,
-   "chg_24h": -0.89732,
-   "chg_7d": -0.7559,
-   "chg_30d": 0.8023,
-   "high_24h": 354.4,
+   "usd": 349.09,
+   "rub": 29269,
+   "chg_24h": 0.56655,
+   "chg_7d": 0.1396,
+   "chg_30d": 1.4247,
+   "high_24h": 352.09,
    "low_24h": 341.7,
-   "ath_pct": -14.08125,
-   "volume": 5619286,
+   "ath_pct": -14.50173,
+   "volume": 8695908,
    "history": null,
    "source": "coingecko"
   },
@@ -1018,15 +1017,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 176.93,
-   "rub": 14840.52,
-   "chg_24h": 1.9371,
-   "chg_7d": -0.1188,
-   "chg_30d": -2.3052,
-   "high_24h": 175.63,
+   "usd": 182.21,
+   "rub": 15266.96,
+   "chg_24h": 6.27049,
+   "chg_7d": 5.1861,
+   "chg_30d": 6.8982,
+   "high_24h": 185.16,
    "low_24h": 166.69,
-   "ath_pct": -60.17782,
-   "volume": 5159264,
+   "ath_pct": -58.98958,
+   "volume": 5203044,
    "history": null,
    "source": "coingecko"
   },
@@ -1037,15 +1036,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 93.75,
-   "rub": 7888.73,
-   "chg_24h": -6.14451,
-   "chg_7d": -14.5804,
-   "chg_30d": -6.6158,
-   "high_24h": 99.66,
+   "usd": 95.11,
+   "rub": 7976.3,
+   "chg_24h": -1.64799,
+   "chg_7d": -10.8544,
+   "chg_30d": -1.4545,
+   "high_24h": 97.21,
    "low_24h": 90.34,
-   "ath_pct": -84.60286,
-   "volume": 633756,
+   "ath_pct": -84.37945,
+   "volume": 589155,
    "history": null,
    "source": "coingecko"
   },
@@ -1056,15 +1055,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 345.17,
-   "rub": 28942,
-   "chg_24h": -0.4198,
-   "chg_7d": 2.2332,
-   "chg_30d": 4.2679,
+   "usd": 342.41,
+   "rub": 28740,
+   "chg_24h": -0.95426,
+   "chg_7d": 0.27,
+   "chg_30d": 2.9771,
    "high_24h": 347.8,
-   "low_24h": 342.74,
-   "ath_pct": -0.96069,
-   "volume": 3994130,
+   "low_24h": 342.26,
+   "ath_pct": -1.75238,
+   "volume": 3546726,
    "history": null,
    "source": "coingecko"
   },
@@ -1075,15 +1074,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 100.65,
-   "rub": 8448.59,
-   "chg_24h": -2.16146,
-   "chg_7d": -5.9369,
-   "chg_30d": -9.8271,
-   "high_24h": 102.97,
+   "usd": 103.43,
+   "rub": 8673.75,
+   "chg_24h": 4.02147,
+   "chg_7d": -3.4259,
+   "chg_30d": -4.8278,
+   "high_24h": 104.22,
    "low_24h": 95.05,
-   "ath_pct": -81.12059,
-   "volume": 3077644,
+   "ath_pct": -80.59895,
+   "volume": 2721318,
    "history": null,
    "source": "coingecko"
   },
@@ -1094,15 +1093,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 254.31,
-   "rub": 21331,
-   "chg_24h": -0.35907,
-   "chg_7d": -2.3489,
-   "chg_30d": 0.1151,
-   "high_24h": 255.47,
+   "usd": 253.83,
+   "rub": 21286,
+   "chg_24h": 0.77095,
+   "chg_7d": -0.3657,
+   "chg_30d": 2.2235,
+   "high_24h": 255.66,
    "low_24h": 248.87,
-   "ath_pct": -76.46824,
-   "volume": 3398286,
+   "ath_pct": -76.51288,
+   "volume": 3937102,
    "history": null,
    "source": "coingecko"
   },
@@ -1113,15 +1112,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 540.97,
-   "rub": 45384,
-   "chg_24h": 0.11593,
-   "chg_7d": 1.1267,
-   "chg_30d": 6.9295,
-   "high_24h": 540.87,
+   "usd": 540.3,
+   "rub": 45310,
+   "chg_24h": 1.37573,
+   "chg_7d": 2.7885,
+   "chg_30d": 8.1281,
+   "high_24h": 543.85,
    "low_24h": 529.72,
-   "ath_pct": -29.52789,
-   "volume": 895911,
+   "ath_pct": -29.61477,
+   "volume": 568075,
    "history": null,
    "source": "coingecko"
   },
@@ -1132,15 +1131,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 342.93,
-   "rub": 28758,
-   "chg_24h": -2.42212,
-   "chg_7d": -7.2031,
-   "chg_30d": -0.9932,
-   "high_24h": 351.8,
+   "usd": 344.39,
+   "rub": 28907,
+   "chg_24h": -0.16325,
+   "chg_7d": -5.6933,
+   "chg_30d": 0.9307,
+   "high_24h": 347.32,
    "low_24h": 337.46,
-   "ath_pct": -34.72144,
-   "volume": 405882,
+   "ath_pct": -34.44336,
+   "volume": 505430,
    "history": null,
    "source": "coingecko"
   },
@@ -1151,15 +1150,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 235.68,
-   "rub": 19875.94,
-   "chg_24h": -7.48354,
-   "chg_7d": -14.8916,
-   "chg_30d": 4.3091,
-   "high_24h": 254.24,
+   "usd": 242.02,
+   "rub": 20296,
+   "chg_24h": 0.49092,
+   "chg_7d": -12.199,
+   "chg_30d": 8.8448,
+   "high_24h": 244.05,
    "low_24h": 228.57,
-   "ath_pct": -31.93122,
-   "volume": 116335,
+   "ath_pct": -30.10076,
+   "volume": 136037,
    "history": null,
    "source": "coingecko"
   },
@@ -1170,15 +1169,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 134.58,
-   "rub": 11287.36,
-   "chg_24h": 0.33439,
-   "chg_7d": -7.6434,
-   "chg_30d": -6.7744,
-   "high_24h": 133.22,
+   "usd": 134.96,
+   "rub": 11317.49,
+   "chg_24h": 3.97616,
+   "chg_7d": -1.2125,
+   "chg_30d": -4.5933,
+   "high_24h": 134.96,
    "low_24h": 128.03,
-   "ath_pct": -60.5701,
-   "volume": 97217,
+   "ath_pct": -60.46126,
+   "volume": 104214,
    "history": null,
    "source": "coingecko"
   },
@@ -1189,15 +1188,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 547.09,
-   "rub": 45933,
-   "chg_24h": -5.97909,
-   "chg_7d": -14.0051,
-   "chg_30d": 6.671,
-   "high_24h": 581.16,
+   "usd": 556.71,
+   "rub": 46695,
+   "chg_24h": -1.01882,
+   "chg_7d": -10.1876,
+   "chg_30d": 11.1044,
+   "high_24h": 568.19,
    "low_24h": 531.46,
-   "ath_pct": -16.78742,
-   "volume": 542236,
+   "ath_pct": -15.32396,
+   "volume": 614036,
    "history": null,
    "source": "coingecko"
   },
@@ -1208,15 +1207,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 73.3,
-   "rub": 6147.56,
-   "chg_24h": -3.64041,
-   "chg_7d": -14.4057,
-   "chg_30d": 2.6135,
-   "high_24h": 76.06,
+   "usd": 74.78,
+   "rub": 6270.86,
+   "chg_24h": 1.3667,
+   "chg_7d": -7.6345,
+   "chg_30d": 10.3032,
+   "high_24h": 74.78,
    "low_24h": 71.06,
-   "ath_pct": -68.93402,
-   "volume": 9287.07,
+   "ath_pct": -68.30812,
+   "volume": 16632.45,
    "history": null,
    "source": "coingecko"
   },
@@ -1227,15 +1226,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 380.58,
-   "rub": 31920,
-   "chg_24h": -0.32866,
-   "chg_7d": -1.7765,
-   "chg_30d": 1.1057,
-   "high_24h": 384.51,
+   "usd": 385.35,
+   "rub": 32316,
+   "chg_24h": 1.24489,
+   "chg_7d": -0.1934,
+   "chg_30d": 2.3771,
+   "high_24h": 385.61,
    "low_24h": 373.88,
-   "ath_pct": -15.41149,
-   "volume": 12912.57,
+   "ath_pct": -14.35094,
+   "volume": 13055.36,
    "history": null,
    "source": "coingecko"
   },
@@ -1246,15 +1245,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 51.6,
-   "rub": 4327.55,
-   "chg_24h": 1.86632,
-   "chg_7d": -3.3059,
-   "chg_30d": -9.1535,
-   "high_24h": 51.88,
-   "low_24h": 50.27,
-   "ath_pct": -19.85973,
-   "volume": 9776.69,
+   "usd": 52.3,
+   "rub": 4385.66,
+   "chg_24h": 2.99238,
+   "chg_7d": -3.1509,
+   "chg_30d": -10.1062,
+   "high_24h": 52.45,
+   "low_24h": 50.55,
+   "ath_pct": -18.7765,
+   "volume": 6717.53,
    "history": null,
    "source": "coingecko"
   },
@@ -1265,72 +1264,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 1270.94,
-   "rub": 106596,
-   "chg_24h": 4.85737,
-   "chg_7d": 7.9617,
-   "chg_30d": 9.5525,
-   "high_24h": 1263.14,
-   "low_24h": 1207.86,
-   "ath_pct": -2.54394,
-   "volume": 36809,
-   "history": null,
-   "source": "coingecko"
-  },
-  "UNHx": {
-   "name": "UnitedHealth (токен Wallet)",
-   "class": "wallet_token",
-   "tier": "liquid",
-   "wallet": null,
-   "wallet_earn": null,
-   "date": "2026-10-15",
-   "usd": 411.06,
-   "rub": 34477,
-   "chg_24h": 6.53602,
-   "chg_7d": 6.6877,
-   "chg_30d": 6.4318,
-   "high_24h": 411.08,
-   "low_24h": 385.38,
-   "ath_pct": -12.98182,
-   "volume": 36329,
-   "history": null,
-   "source": "coingecko"
-  },
-  "XOMx": {
-   "name": "Exxon Mobil (токен Wallet)",
-   "class": "wallet_token",
-   "tier": "liquid",
-   "wallet": null,
-   "wallet_earn": null,
-   "date": "2026-10-15",
-   "usd": 174.32,
-   "rub": 14619.77,
-   "chg_24h": -1.36927,
-   "chg_7d": 2.5458,
-   "chg_30d": 3.3483,
-   "high_24h": 181.36,
-   "low_24h": 174.24,
-   "ath_pct": -43.11126,
-   "volume": 6724.52,
-   "history": null,
-   "source": "coingecko"
-  },
-  "IWMx": {
-   "name": "iShares Russell 2000 (токен Wallet)",
-   "class": "wallet_token",
-   "tier": "liquid",
-   "wallet": null,
-   "wallet_earn": null,
-   "date": "2026-10-15",
-   "usd": 272.79,
-   "rub": 22879,
-   "chg_24h": -0.426,
-   "chg_7d": -4.1849,
-   "chg_30d": -8.9174,
-   "high_24h": 274.01,
-   "low_24h": 272.78,
-   "ath_pct": -65.87604,
-   "volume": 651.96,
+   "usd": 1261.92,
+   "rub": 105826,
+   "chg_24h": 4.07353,
+   "chg_7d": 7.8072,
+   "chg_30d": 11.0401,
+   "high_24h": 1272.95,
+   "low_24h": 1208.14,
+   "ath_pct": -3.23595,
+   "volume": 42713,
    "history": null,
    "source": "coingecko"
   },
@@ -1342,14 +1284,71 @@
    "wallet_earn": null,
    "date": "2026-10-15",
    "usd": 66.97,
-   "rub": 5616.7,
-   "chg_24h": -1.68596,
-   "chg_7d": 5.7244,
-   "chg_30d": 1.5912,
+   "rub": 5615.86,
+   "chg_24h": -0.56329,
+   "chg_7d": 2.8047,
+   "chg_30d": 1.6627,
    "high_24h": 68.49,
    "low_24h": 66.86,
-   "ath_pct": -57.33261,
-   "volume": 158923,
+   "ath_pct": -57.33524,
+   "volume": 158823,
+   "history": null,
+   "source": "coingecko"
+  },
+  "XOMx": {
+   "name": "Exxon Mobil (токен Wallet)",
+   "class": "wallet_token",
+   "tier": "liquid",
+   "wallet": null,
+   "wallet_earn": null,
+   "date": "2026-10-15",
+   "usd": 181.25,
+   "rub": 15200.07,
+   "chg_24h": 0.55687,
+   "chg_7d": 8.7499,
+   "chg_30d": 7.5097,
+   "high_24h": 181.36,
+   "low_24h": 174.17,
+   "ath_pct": -40.84722,
+   "volume": 5175.92,
+   "history": null,
+   "source": "coingecko"
+  },
+  "IWMx": {
+   "name": "iShares Russell 2000 (токен Wallet)",
+   "class": "wallet_token",
+   "tier": "liquid",
+   "wallet": null,
+   "wallet_earn": null,
+   "date": "2026-10-15",
+   "usd": 272.78,
+   "rub": 22875,
+   "chg_24h": -0.44804,
+   "chg_7d": -4.1905,
+   "chg_30d": -8.9227,
+   "high_24h": 273.95,
+   "low_24h": 272.75,
+   "ath_pct": -65.87814,
+   "volume": 264.51,
+   "history": null,
+   "source": "coingecko"
+  },
+  "UNHx": {
+   "name": "UnitedHealth (токен Wallet)",
+   "class": "wallet_token",
+   "tier": "liquid",
+   "wallet": null,
+   "wallet_earn": null,
+   "date": "2026-10-15",
+   "usd": 402.5,
+   "rub": 33754,
+   "chg_24h": 2.14213,
+   "chg_7d": 7.7675,
+   "chg_30d": 4.7596,
+   "high_24h": 413.53,
+   "low_24h": 393.85,
+   "ath_pct": -14.79509,
+   "volume": 49273,
    "history": null,
    "source": "coingecko"
   },
@@ -1360,34 +1359,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 259.66,
-   "rub": 21777,
-   "chg_24h": 3.27413,
-   "chg_7d": 0.9792,
-   "chg_30d": -2.6688,
+   "usd": 253.5,
+   "rub": 21258,
+   "chg_24h": -0.00753,
+   "chg_7d": -0.586,
+   "chg_30d": -5.0645,
    "high_24h": 259.66,
-   "low_24h": 251.4,
-   "ath_pct": -8.32626,
-   "volume": 2959.69,
-   "history": null,
-   "source": "coingecko"
-  },
-  "Vx": {
-   "name": "Visa (токен Wallet)",
-   "class": "wallet_token",
-   "tier": "liquid",
-   "wallet": null,
-   "wallet_earn": null,
-   "date": "2026-10-15",
-   "usd": 435.5,
-   "rub": 36525,
-   "chg_24h": 10.99402,
-   "chg_7d": 16.4372,
-   "chg_30d": 15.7618,
-   "high_24h": 448.56,
-   "low_24h": 133.53,
-   "ath_pct": -99.04485,
-   "volume": 590.94,
+   "low_24h": 253.48,
+   "ath_pct": -10.50152,
+   "volume": 2456.11,
    "history": null,
    "source": "coingecko"
   },
@@ -1398,15 +1378,34 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 37.57,
-   "rub": 3150.67,
-   "chg_24h": -1.36686,
-   "chg_7d": -0.9627,
-   "chg_30d": -13.5354,
-   "high_24h": 38.23,
+   "usd": 39.63,
+   "rub": 3323.27,
+   "chg_24h": 5.98476,
+   "chg_7d": 3.115,
+   "chg_30d": -8.505,
+   "high_24h": 39.83,
    "low_24h": 37.39,
-   "ath_pct": -62.34343,
-   "volume": 1868.62,
+   "ath_pct": -60.27691,
+   "volume": 290.28,
+   "history": null,
+   "source": "coingecko"
+  },
+  "Vx": {
+   "name": "Visa (токен Wallet)",
+   "class": "wallet_token",
+   "tier": "liquid",
+   "wallet": null,
+   "wallet_earn": null,
+   "date": "2026-10-15",
+   "usd": 413.0,
+   "rub": 34634,
+   "chg_24h": 5.58391,
+   "chg_7d": 9.5093,
+   "chg_30d": 9.3,
+   "high_24h": 516.2,
+   "low_24h": 133.53,
+   "ath_pct": -99.09419,
+   "volume": 237.93,
    "history": null,
    "source": "coingecko"
   },
@@ -1418,12 +1417,12 @@
    "wallet_earn": null,
    "date": "2026-10-15",
    "usd": 105.56,
-   "rub": 8853.0,
-   "chg_24h": 0.02542,
+   "rub": 8851.98,
+   "chg_24h": 0.00359,
    "chg_7d": -0.3931,
    "chg_30d": 0.0748,
    "high_24h": 105.56,
-   "low_24h": 105.52,
+   "low_24h": 105.54,
    "ath_pct": -75.50352,
    "volume": 141.96,
    "history": null,
@@ -1436,15 +1435,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 158.8,
-   "rub": 13318.71,
-   "chg_24h": 2.54647,
-   "chg_7d": 4.5027,
-   "chg_30d": 7.7811,
+   "usd": 156.86,
+   "rub": 13154.73,
+   "chg_24h": 0.28759,
+   "chg_7d": 3.6942,
+   "chg_30d": 4.0494,
    "high_24h": 159.16,
-   "low_24h": 154.75,
-   "ath_pct": -10.79056,
-   "volume": 15560.75,
+   "low_24h": 156.24,
+   "ath_pct": -11.87629,
+   "volume": 20987,
    "history": null,
    "source": "coingecko"
   },
@@ -1456,14 +1455,14 @@
    "wallet_earn": null,
    "date": "2026-10-15",
    "usd": 77.88,
-   "rub": 6531.68,
-   "chg_24h": -1.28193,
-   "chg_7d": -5.1746,
-   "chg_30d": -3.4857,
+   "rub": 6530.7,
+   "chg_24h": -1.30296,
+   "chg_7d": -4.7305,
+   "chg_30d": -3.4913,
    "high_24h": 78.92,
-   "low_24h": 77.88,
-   "ath_pct": -52.75086,
-   "volume": 576.1,
+   "low_24h": 77.87,
+   "ath_pct": -52.75377,
+   "volume": 247.26,
    "history": null,
    "source": "coingecko"
   },
@@ -1474,15 +1473,15 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 14.49,
-   "rub": 1215.58,
-   "chg_24h": -3.12672,
-   "chg_7d": -4.2724,
-   "chg_30d": -10.0076,
-   "high_24h": 14.96,
+   "usd": 14.81,
+   "rub": 1242.25,
+   "chg_24h": 1.50521,
+   "chg_7d": -0.8525,
+   "chg_30d": -8.0494,
+   "high_24h": 14.81,
    "low_24h": 14.49,
-   "ath_pct": -99.27532,
-   "volume": 7090.5,
+   "ath_pct": -99.25935,
+   "volume": 1289.56,
    "history": null,
    "source": "coingecko"
   },
@@ -1494,12 +1493,12 @@
    "wallet_earn": null,
    "date": "2026-10-15",
    "usd": 30.52,
-   "rub": 2559.4,
-   "chg_24h": -0.01462,
+   "rub": 2559.11,
+   "chg_24h": null,
    "chg_7d": -23.235,
    "chg_30d": -38.9535,
-   "high_24h": 30.52,
-   "low_24h": 30.51,
+   "high_24h": 0.0,
+   "low_24h": 0.0,
    "ath_pct": -84.14773,
    "volume": 3.63,
    "history": null,
@@ -1512,17 +1511,757 @@
    "wallet": null,
    "wallet_earn": null,
    "date": "2026-10-15",
-   "usd": 20.58,
-   "rub": 1725.98,
-   "chg_24h": 2.20492,
-   "chg_7d": -0.9389,
-   "chg_30d": -12.76,
+   "usd": 20.44,
+   "rub": 1713.97,
+   "chg_24h": 2.71254,
+   "chg_7d": 0.5106,
+   "chg_30d": -13.0826,
    "high_24h": 20.75,
    "low_24h": 19.9,
-   "ath_pct": -87.3744,
-   "volume": 4202.62,
+   "ath_pct": -87.46114,
+   "volume": 4205.57,
    "history": null,
    "source": "coingecko"
+  },
+  "NBIS": {
+   "name": "Nebius",
+   "class": "equity",
+   "tier": "spec",
+   "wallet": null,
+   "wallet_earn": null,
+   "date": "2026-10-15",
+   "usd": 188.41000366210938,
+   "rub": null,
+   "chg_24h": 1.2902581722216144,
+   "chg_7d": -14.246052567155232,
+   "chg_30d": -10.010981489179716,
+   "high_24h": null,
+   "low_24h": null,
+   "ath_pct": null,
+   "volume": null,
+   "history": [
+    [
+     "2026-01-29",
+     94.91000366210938
+    ],
+    [
+     "2026-01-30",
+     85.19000244140625
+    ],
+    [
+     "2026-02-02",
+     88.16000366210938
+    ],
+    [
+     "2026-02-03",
+     89.94999694824219
+    ],
+    [
+     "2026-02-04",
+     82.38999938964844
+    ],
+    [
+     "2026-02-05",
+     73.87000274658203
+    ],
+    [
+     "2026-02-06",
+     86.0999984741211
+    ],
+    [
+     "2026-02-09",
+     92.87999725341797
+    ],
+    [
+     "2026-02-10",
+     91.79000091552734
+    ],
+    [
+     "2026-02-11",
+     88.61000061035156
+    ],
+    [
+     "2026-02-12",
+     89.7300033569336
+    ],
+    [
+     "2026-02-13",
+     98.01000213623047
+    ],
+    [
+     "2026-02-17",
+     97.5199966430664
+    ],
+    [
+     "2026-02-18",
+     101.80000305175781
+    ],
+    [
+     "2026-02-19",
+     107.61000061035156
+    ],
+    [
+     "2026-02-20",
+     97.91999816894531
+    ],
+    [
+     "2026-02-23",
+     100.61000061035156
+    ],
+    [
+     "2026-02-24",
+     102.58000183105469
+    ],
+    [
+     "2026-02-25",
+     106.12000274658203
+    ],
+    [
+     "2026-02-26",
+     104.87999725341797
+    ],
+    [
+     "2026-02-27",
+     91.19000244140625
+    ],
+    [
+     "2026-03-02",
+     91.01000213623047
+    ],
+    [
+     "2026-03-03",
+     86.80000305175781
+    ],
+    [
+     "2026-03-04",
+     97.77999877929688
+    ],
+    [
+     "2026-03-05",
+     95.6500015258789
+    ],
+    [
+     "2026-03-06",
+     89.33000183105469
+    ],
+    [
+     "2026-03-09",
+     94.94000244140625
+    ],
+    [
+     "2026-03-10",
+     96.43000030517578
+    ],
+    [
+     "2026-03-11",
+     111.99500274658203
+    ],
+    [
+     "2026-03-12",
+     108.04000091552734
+    ],
+    [
+     "2026-03-13",
+     112.94999694824219
+    ],
+    [
+     "2026-03-16",
+     129.85000610351562
+    ],
+    [
+     "2026-03-17",
+     116.33000183105469
+    ],
+    [
+     "2026-03-18",
+     118.55999755859375
+    ],
+    [
+     "2026-03-19",
+     121.5199966430664
+    ],
+    [
+     "2026-03-20",
+     117.62000274658203
+    ],
+    [
+     "2026-03-23",
+     114.1500015258789
+    ],
+    [
+     "2026-03-24",
+     114.91000366210938
+    ],
+    [
+     "2026-03-25",
+     115.08999633789062
+    ],
+    [
+     "2026-03-26",
+     105.97000122070312
+    ],
+    [
+     "2026-03-27",
+     100.81999969482422
+    ],
+    [
+     "2026-03-30",
+     92.26000213623047
+    ],
+    [
+     "2026-03-31",
+     103.76000213623047
+    ],
+    [
+     "2026-04-01",
+     101.94999694824219
+    ],
+    [
+     "2026-04-02",
+     108.81999969482422
+    ],
+    [
+     "2026-04-06",
+     112.54000091552734
+    ],
+    [
+     "2026-04-07",
+     117.4000015258789
+    ],
+    [
+     "2026-04-08",
+     125.0
+    ],
+    [
+     "2026-04-09",
+     136.3300018310547
+    ],
+    [
+     "2026-04-10",
+     144.97000122070312
+    ],
+    [
+     "2026-04-13",
+     154.55999755859375
+    ],
+    [
+     "2026-04-14",
+     161.94000244140625
+    ],
+    [
+     "2026-04-15",
+     166.77000427246094
+    ],
+    [
+     "2026-04-16",
+     165.33999633789062
+    ],
+    [
+     "2026-04-17",
+     157.13999938964844
+    ],
+    [
+     "2026-04-20",
+     159.16000366210938
+    ],
+    [
+     "2026-04-21",
+     156.5500030517578
+    ],
+    [
+     "2026-04-22",
+     156.13999938964844
+    ],
+    [
+     "2026-04-23",
+     157.0800018310547
+    ],
+    [
+     "2026-04-24",
+     147.16000366210938
+    ],
+    [
+     "2026-04-27",
+     144.9600067138672
+    ],
+    [
+     "2026-04-28",
+     135.50999450683594
+    ],
+    [
+     "2026-04-29",
+     141.19000244140625
+    ],
+    [
+     "2026-04-30",
+     138.22999572753906
+    ],
+    [
+     "2026-05-01",
+     154.49000549316406
+    ],
+    [
+     "2026-05-04",
+     176.4199981689453
+    ],
+    [
+     "2026-05-05",
+     175.9199981689453
+    ],
+    [
+     "2026-05-06",
+     195.08999633789062
+    ],
+    [
+     "2026-05-07",
+     184.77000427246094
+    ],
+    [
+     "2026-05-08",
+     177.0500030517578
+    ],
+    [
+     "2026-05-11",
+     186.10000610351562
+    ],
+    [
+     "2026-05-12",
+     179.11000061035156
+    ],
+    [
+     "2026-05-13",
+     207.27000427246094
+    ],
+    [
+     "2026-05-14",
+     221.14999389648438
+    ],
+    [
+     "2026-05-15",
+     219.94000244140625
+    ],
+    [
+     "2026-05-18",
+     199.86000061035156
+    ],
+    [
+     "2026-05-19",
+     197.72999572753906
+    ],
+    [
+     "2026-05-20",
+     191.82000732421875
+    ],
+    [
+     "2026-05-21",
+     219.92999267578125
+    ],
+    [
+     "2026-05-22",
+     214.77000427246094
+    ],
+    [
+     "2026-05-26",
+     208.05999755859375
+    ],
+    [
+     "2026-05-27",
+     208.3699951171875
+    ],
+    [
+     "2026-05-28",
+     226.33999633789062
+    ],
+    [
+     "2026-05-29",
+     231.08999633789062
+    ],
+    [
+     "2026-06-01",
+     264.510009765625
+    ],
+    [
+     "2026-06-02",
+     260.5799865722656
+    ],
+    [
+     "2026-06-03",
+     251.67999267578125
+    ],
+    [
+     "2026-06-04",
+     259.6700134277344
+    ],
+    [
+     "2026-06-05",
+     227.80999755859375
+    ],
+    [
+     "2026-06-08",
+     218.0
+    ],
+    [
+     "2026-06-09",
+     220.1199951171875
+    ],
+    [
+     "2026-06-10",
+     211.69000244140625
+    ],
+    [
+     "2026-06-11",
+     222.24000549316406
+    ],
+    [
+     "2026-06-12",
+     232.36000061035156
+    ],
+    [
+     "2026-06-15",
+     260.07000732421875
+    ],
+    [
+     "2026-06-16",
+     265.1000061035156
+    ],
+    [
+     "2026-06-17",
+     280.9100036621094
+    ],
+    [
+     "2026-06-18",
+     286.69000244140625
+    ],
+    [
+     "2026-06-22",
+     283.6099853515625
+    ],
+    [
+     "2026-06-23",
+     275.25
+    ],
+    [
+     "2026-06-24",
+     259.6600036621094
+    ],
+    [
+     "2026-06-25",
+     256.6300048828125
+    ],
+    [
+     "2026-06-26",
+     240.3000030517578
+    ],
+    [
+     "2026-06-29",
+     261.1499938964844
+    ],
+    [
+     "2026-06-30",
+     276.1700134277344
+    ],
+    [
+     "2026-07-01",
+     229.17999267578125
+    ],
+    [
+     "2026-07-02",
+     215.6199951171875
+    ],
+    [
+     "2026-07-06",
+     213.02000427246094
+    ],
+    [
+     "2026-07-07",
+     195.19000244140625
+    ],
+    [
+     "2026-07-08",
+     216.47999572753906
+    ],
+    [
+     "2026-07-09",
+     216.1999969482422
+    ],
+    [
+     "2026-07-10",
+     219.64999389648438
+    ],
+    [
+     "2026-07-13",
+     210.50999450683594
+    ],
+    [
+     "2026-07-14",
+     194.08999633789062
+    ],
+    [
+     "2026-07-15",
+     199.50999450683594
+    ],
+    [
+     "2026-07-16",
+     171.77000427246094
+    ],
+    [
+     "2026-07-17",
+     177.7100067138672
+    ],
+    [
+     "2026-07-20",
+     182.6199951171875
+    ],
+    [
+     "2026-07-21",
+     216.9199981689453
+    ],
+    [
+     "2026-07-22",
+     218.16000366210938
+    ],
+    [
+     "2026-07-23",
+     220.97000122070312
+    ],
+    [
+     "2026-07-24",
+     187.77000427246094
+    ],
+    [
+     "2026-07-27",
+     187.8800048828125
+    ],
+    [
+     "2026-07-28",
+     169.69000244140625
+    ],
+    [
+     "2026-07-29",
+     148.22000122070312
+    ],
+    [
+     "2026-07-30",
+     188.42999267578125
+    ],
+    [
+     "2026-07-31",
+     190.41000366210938
+    ],
+    [
+     "2026-08-03",
+     212.5800018310547
+    ],
+    [
+     "2026-08-04",
+     225.74000549316406
+    ],
+    [
+     "2026-08-05",
+     218.99000549316406
+    ],
+    [
+     "2026-08-06",
+     189.8800048828125
+    ],
+    [
+     "2026-08-07",
+     187.97000122070312
+    ],
+    [
+     "2026-08-10",
+     184.11000061035156
+    ],
+    [
+     "2026-08-11",
+     193.22999572753906
+    ],
+    [
+     "2026-08-12",
+     259.20001220703125
+    ],
+    [
+     "2026-08-13",
+     255.0399932861328
+    ],
+    [
+     "2026-08-14",
+     277.67999267578125
+    ],
+    [
+     "2026-08-17",
+     268.8500061035156
+    ],
+    [
+     "2026-08-18",
+     248.42999267578125
+    ],
+    [
+     "2026-08-19",
+     223.89999389648438
+    ],
+    [
+     "2026-08-20",
+     220.11000061035156
+    ],
+    [
+     "2026-08-21",
+     219.1300048828125
+    ],
+    [
+     "2026-08-24",
+     210.91000366210938
+    ],
+    [
+     "2026-08-25",
+     221.97000122070312
+    ],
+    [
+     "2026-08-26",
+     213.92999267578125
+    ],
+    [
+     "2026-08-27",
+     218.47999572753906
+    ],
+    [
+     "2026-08-28",
+     209.17999267578125
+    ],
+    [
+     "2026-08-31",
+     206.32000732421875
+    ],
+    [
+     "2026-09-01",
+     199.5399932861328
+    ],
+    [
+     "2026-09-02",
+     204.08999633789062
+    ],
+    [
+     "2026-09-03",
+     210.6300048828125
+    ],
+    [
+     "2026-09-04",
+     226.38999938964844
+    ],
+    [
+     "2026-09-08",
+     243.8800048828125
+    ],
+    [
+     "2026-09-09",
+     240.35000610351562
+    ],
+    [
+     "2026-09-10",
+     228.11000061035156
+    ],
+    [
+     "2026-09-11",
+     224.5500030517578
+    ],
+    [
+     "2026-09-14",
+     212.19000244140625
+    ],
+    [
+     "2026-09-15",
+     207.3699951171875
+    ],
+    [
+     "2026-09-16",
+     209.3699951171875
+    ],
+    [
+     "2026-09-17",
+     217.99000549316406
+    ],
+    [
+     "2026-09-18",
+     223.5399932861328
+    ],
+    [
+     "2026-09-21",
+     232.8000030517578
+    ],
+    [
+     "2026-09-22",
+     236.1199951171875
+    ],
+    [
+     "2026-09-23",
+     226.61000061035156
+    ],
+    [
+     "2026-09-24",
+     243.47999572753906
+    ],
+    [
+     "2026-09-25",
+     237.3300018310547
+    ],
+    [
+     "2026-09-28",
+     231.8800048828125
+    ],
+    [
+     "2026-09-29",
+     237.35499572753906
+    ],
+    [
+     "2026-09-30",
+     235.8800048828125
+    ],
+    [
+     "2026-10-01",
+     232.27999877929688
+    ],
+    [
+     "2026-10-02",
+     242.80999755859375
+    ],
+    [
+     "2026-10-05",
+     232.57000732421875
+    ],
+    [
+     "2026-10-06",
+     249.8699951171875
+    ],
+    [
+     "2026-10-07",
+     237.14999389648438
+    ],
+    [
+     "2026-10-08",
+     219.7100067138672
+    ],
+    [
+     "2026-10-09",
+     221.07000732421875
+    ],
+    [
+     "2026-10-12",
+     210.05999755859375
+    ],
+    [
+     "2026-10-13",
+     206.86000061035156
+    ],
+    [
+     "2026-10-14",
+     186.00999450683594
+    ],
+    [
+     "2026-10-15",
+     188.41000366210938
+    ]
+   ],
+   "source": "yahoo:NBIS"
   }
  }
 }

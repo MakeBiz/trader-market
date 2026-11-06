@@ -139,3 +139,48 @@
 [01:09:20]   пропущено (история уже есть): 59
 [01:09:20] История: добавлено 0 строк, обновлено 1424, всего ключей 30722
 [01:09:20] Снапшот: 76 инструментов
+[17:38:15] Старт сбора (с историей за год), 2026-11-06 17:38 UTC, бюджет 22 мин
+[17:38:15] Уборка истории: выкинуто 0 строк, осталось 30722
+[17:38:15] Разрешаю 1 id через /coins/list
+[17:38:15]   ADI -> adi-token
+[17:38:30] CoinGecko: получено 42 из 42
+[17:38:30] xStocks: нашлось токенов 36 из 38
+[17:38:37]   лимит запросов, жду 20s
+[17:38:57]   лимит запросов, жду 40s
+[17:39:44] CoinGecko: получено 34 из 36
+[17:39:45] Yahoo NVDA: HTTP Error 429: Too Many Requests
+[17:40:45]   повтор через 1s после ошибки: <urlopen error timed out>
+[17:41:47]   повтор через 2s после ошибки: <urlopen error timed out>
+[17:42:49] Stooq nvda.us: <urlopen error timed out>
+[17:42:50] Yahoo AAPL: HTTP Error 429: Too Many Requests
+[17:43:51]   повтор через 1s после ошибки: <urlopen error timed out>
+[17:44:53]   повтор через 2s после ошибки: <urlopen error timed out>
+[17:45:55] Stooq aapl.us: <urlopen error timed out>
+[17:45:56] Yahoo MSFT: HTTP Error 429: Too Many Requests
+[17:46:57]   повтор через 1s после ошибки: <urlopen error timed out>
+[17:47:58]   повтор через 2s после ошибки: <urlopen error timed out>
+[17:49:01] Stooq msft.us: <urlopen error timed out>
+[17:49:02] Yahoo GOOGL: HTTP Error 429: Too Many Requests
+[17:50:03]   повтор через 1s после ошибки: <urlopen error timed out>
+[17:51:04]   повтор через 2s после ошибки: <urlopen error timed out>
+[17:52:06] Stooq googl.us: <urlopen error timed out>
+[17:52:08] Yahoo AMZN: HTTP Error 429: Too Many Requests
+[17:53:09]   повтор через 1s после ошибки: <urlopen error timed out>
+[17:54:10]   повтор через 2s после ошибки: <urlopen error timed out>
+[17:55:12] Stooq amzn.us: <urlopen error timed out>
+[17:55:14] Yahoo TSLA: HTTP Error 429: Too Many Requests
+[17:56:15]   повтор через 1s после ошибки: <urlopen error timed out>
+[17:57:16]   повтор через 2s после ошибки: <urlopen error timed out>
+[17:58:18] Stooq tsla.us: <urlopen error timed out>
+[17:58:19]   время вышло, остаток класса equity доберём следующим прогоном
+[17:58:19] Дневные свечи (equity): получено 0 из 29
+[17:58:19]   время вышло, остаток класса etf доберём следующим прогоном
+[17:58:19] Дневные свечи (etf): получено 0 из 14
+[17:58:19]   время вышло, остаток класса commodity доберём следующим прогоном
+[17:58:19] Дневные свечи (commodity): получено 0 из 5
+[17:58:19]   время вышло, остаток класса index доберём следующим прогоном
+[17:58:19] Дневные свечи (index): получено 0 из 4
+[17:58:20] ЦБ РФ: USD/RUB = 82.1386
+[17:58:20] История: добавлено 0 строк, обновлено 76, всего ключей 30722
+[17:58:20] Снапшот: 76 инструментов
+[17:58:20] На догрузку истории времени не осталось, доберём следующим прогоном

@@ -1,0 +1,140 @@
+[00:12:43] Старт сбора (с историей за год), 2026-11-07 00:12 UTC, бюджет 22 мин
+[00:12:43] Уборка истории: выкинуто 0 строк, осталось 30722
+[00:12:43] Разрешаю 1 id через /coins/list
+[00:12:43]   ADI -> adi-token
+[00:12:58] CoinGecko: получено 42 из 42
+[00:12:58] xStocks: нашлось токенов 36 из 38
+[00:13:12] CoinGecko: получено 34 из 36
+[00:13:12] Yahoo NVDA: HTTP Error 429: Too Many Requests
+[00:13:13]   Stooq nvda.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:15] Yahoo AAPL: HTTP Error 429: Too Many Requests
+[00:13:16]   Stooq aapl.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:17] Yahoo MSFT: HTTP Error 429: Too Many Requests
+[00:13:18]   Stooq msft.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:19] Yahoo GOOGL: HTTP Error 429: Too Many Requests
+[00:13:21]   Stooq googl.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:22] Yahoo AMZN: HTTP Error 429: Too Many Requests
+[00:13:23]   Stooq amzn.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:24] Yahoo TSLA: HTTP Error 429: Too Many Requests
+[00:13:26]   Stooq tsla.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:27] Yahoo AVGO: HTTP Error 429: Too Many Requests
+[00:13:28]   Stooq avgo.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:29] Yahoo TSM: HTTP Error 429: Too Many Requests
+[00:13:30]   Stooq tsm.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:32] Yahoo MU: HTTP Error 429: Too Many Requests
+[00:13:33]   Stooq mu.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:34] Yahoo AMD: HTTP Error 429: Too Many Requests
+[00:13:35]   Stooq amd.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:37] Yahoo MRVL: HTTP Error 429: Too Many Requests
+[00:13:38]   Stooq mrvl.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:39] Yahoo INTC: HTTP Error 429: Too Many Requests
+[00:13:40]   Stooq intc.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:42] Yahoo ORCL: HTTP Error 429: Too Many Requests
+[00:13:43]   Stooq orcl.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:44] Yahoo PLTR: HTTP Error 429: Too Many Requests
+[00:13:46]   Stooq pltr.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:47] Yahoo COIN: HTTP Error 429: Too Many Requests
+[00:13:48]   Stooq coin.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:49] Yahoo HOOD: HTTP Error 429: Too Many Requests
+[00:13:50]   Stooq hood.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:52] Yahoo MSTR: HTTP Error 429: Too Many Requests
+[00:13:53]   Stooq mstr.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:54] Yahoo CRCL: HTTP Error 429: Too Many Requests
+[00:13:55]   Stooq crcl.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:57] Yahoo NBIS: HTTP Error 429: Too Many Requests
+[00:13:58]   Stooq nbis.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:13:59] Yahoo CRWV: HTTP Error 429: Too Many Requests
+[00:14:00]   Stooq crwv.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:01] Yahoo LLY: HTTP Error 429: Too Many Requests
+[00:14:02]   Stooq lly.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:03] Yahoo UNH: HTTP Error 429: Too Many Requests
+[00:14:05]   Stooq unh.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:06] Yahoo NVO: HTTP Error 429: Too Many Requests
+[00:14:07]   Stooq nvo.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:08] Yahoo XOM: HTTP Error 429: Too Many Requests
+[00:14:09]   Stooq xom.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:10] Yahoo CVX: HTTP Error 429: Too Many Requests
+[00:14:11]   Stooq cvx.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:13] Yahoo V: HTTP Error 429: Too Many Requests
+[00:14:14]   Stooq v.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:15] Yahoo JNJ: HTTP Error 429: Too Many Requests
+[00:14:16]   Stooq jnj.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:18] Yahoo PG: HTTP Error 429: Too Many Requests
+[00:14:19]   Stooq pg.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:20] Yahoo NFLX: HTTP Error 429: Too Many Requests
+[00:14:21]   Stooq nflx.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:22] Дневные свечи (equity): получено 0 из 29
+[00:14:22] Yahoo SPY: HTTP Error 429: Too Many Requests
+[00:14:24]   Stooq spy.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:25] Yahoo QQQ: HTTP Error 429: Too Many Requests
+[00:14:26]   Stooq qqq.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:27] Yahoo VTI: HTTP Error 429: Too Many Requests
+[00:14:28]   Stooq vti.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:30] Yahoo IWM: HTTP Error 429: Too Many Requests
+[00:14:31]   Stooq iwm.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:32] Yahoo IEMG: HTTP Error 429: Too Many Requests
+[00:14:33]   Stooq iemg.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:35] Yahoo SLV: HTTP Error 429: Too Many Requests
+[00:14:36]   Stooq slv.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:37] Yahoo PPLT: HTTP Error 429: Too Many Requests
+[00:14:38]   Stooq pplt.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:39] Yahoo PALL: HTTP Error 429: Too Many Requests
+[00:14:40]   Stooq pall.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:42] Yahoo XLE: HTTP Error 429: Too Many Requests
+[00:14:43]   Stooq xle.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:44] Yahoo XOP: HTTP Error 429: Too Many Requests
+[00:14:45]   Stooq xop.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:46] Yahoo COPX: HTTP Error 429: Too Many Requests
+[00:14:47]   Stooq copx.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:49] Yahoo URA: HTTP Error 429: Too Many Requests
+[00:14:50]   Stooq ura.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:51] Yahoo TQQQ: HTTP Error 429: Too Many Requests
+[00:14:53]   Stooq tqqq.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:54] Yahoo TBLL: HTTP Error 429: Too Many Requests
+[00:14:55]   Stooq tbll.us ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:56] Дневные свечи (etf): получено 0 из 14
+[00:14:56] Yahoo GC=F: HTTP Error 429: Too Many Requests
+[00:14:58]   Stooq xauusd ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:14:59]   Stooq gc.f ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:15:01] Yahoo SI=F: HTTP Error 429: Too Many Requests
+[00:15:02]   Stooq xagusd ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:15:03]   Stooq si.f ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:15:05] Yahoo PL=F: HTTP Error 429: Too Many Requests
+[00:15:06]   Stooq xptusd ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:15:08]   Stooq pl.f ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:15:09] Yahoo CL=F: HTTP Error 429: Too Many Requests
+[00:15:10]   Stooq cl.f ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:15:11] Yahoo BZ=F: HTTP Error 429: Too Many Requests
+[00:15:12]   Stooq cb.f ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:15:14] Дневные свечи (commodity): получено 0 из 5
+[00:15:14] Yahoo ^GSPC: HTTP Error 429: Too Many Requests
+[00:15:15]   Stooq ^spx ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:15:16] Yahoo ^NDX: HTTP Error 429: Too Many Requests
+[00:15:17]   Stooq ^ndx ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:15:18] Yahoo DX-Y.NYB: HTTP Error 429: Too Many Requests
+[00:15:20]   Stooq ^dxy ответил без данных: <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"></head><body><noscript>T
+[00:15:21] Yahoo RUB=X: HTTP Error 429: Too Many Requests
+[00:16:22]   повтор через 1s после ошибки: <urlopen error timed out>
+[00:17:23]   повтор через 2s после ошибки: <urlopen error timed out>
+[00:18:25] Stooq usdrub: <urlopen error timed out>
+[00:18:27] Дневные свечи (index): получено 0 из 4
+[00:18:27] ЦБ РФ: USD/RUB = 82.1386
+[00:18:27] История: добавлено 76 строк, обновлено 0, всего ключей 30798
+[00:18:27] Снапшот: 76 инструментов
+[00:18:27] Догружаю историю, осталось времени 16 мин
+[00:18:28]   история PALLx: 134 точек
+[00:18:35]   история PPLTx: 208 точек
+[00:18:42]   история AMDx: 292 точек
+[00:18:49]   история COPXx: 0 точек
+[00:18:57]   история IEMGx: 241 точек
+[00:19:04]   история XLEx: 147 точек
+[00:19:11]   лимит запросов, жду 20s
+[00:19:31]   лимит запросов, жду 40s
+[00:20:13]   история URAx: 13 точек
+[00:20:20]   история SLVx: 86 точек
+[00:20:27]   история IWMx: 100 точек
+[00:20:35]   история XOPx: 0 точек
+[00:20:42]   история TBLLx: 207 точек
+[00:20:49]   пропущено (история уже есть): 59
+[00:20:49] История: добавлено 0 строк, обновлено 1428, всего ключей 30798
+[00:20:49] Снапшот: 76 инструментов

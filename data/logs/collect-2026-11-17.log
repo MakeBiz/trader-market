@@ -1,0 +1,46 @@
+[03:03:16] Старт сбора (с историей за год), 2026-11-17 03:03 UTC, бюджет 22 мин
+[03:03:16] Уборка истории: выкинуто 0 строк, осталось 31994
+[03:03:16] Разрешаю 1 id через /coins/list
+[03:03:16]   ADI -> adi-token
+[03:03:31] CoinGecko: получено 42 из 42
+[03:03:31] xStocks: нашлось токенов 36 из 38
+[03:03:38]   лимит запросов, жду 20s
+[03:03:58]   лимит запросов, жду 40s
+[03:04:38] CoinGecko rub: чанк не забрался: HTTP Error 429: Too Many Requests
+[03:04:45] CoinGecko: получено 34 из 36
+[03:04:45] Yahoo NVDA: HTTP Error 429: Too Many Requests
+[03:05:46]   повтор через 1s после ошибки: <urlopen error timed out>
+[03:06:47]   повтор через 2s после ошибки: <urlopen error timed out>
+[03:07:50] Stooq nvda.us: <urlopen error timed out>
+[03:07:51] Yahoo AAPL: HTTP Error 429: Too Many Requests
+[03:08:52]   повтор через 1s после ошибки: <urlopen error timed out>
+[03:09:53]   повтор через 2s после ошибки: <urlopen error timed out>
+[03:10:55] Stooq aapl.us: <urlopen error timed out>
+[03:10:57] Yahoo MSFT: HTTP Error 429: Too Many Requests
+[03:11:58]   повтор через 1s после ошибки: <urlopen error timed out>
+[03:12:59]   повтор через 2s после ошибки: <urlopen error timed out>
+[03:14:01] Stooq msft.us: <urlopen error timed out>
+[03:14:03] Yahoo GOOGL: HTTP Error 429: Too Many Requests
+[03:15:03]   повтор через 1s после ошибки: <urlopen error timed out>
+[03:16:05]   повтор через 2s после ошибки: <urlopen error timed out>
+[03:17:07] Stooq googl.us: <urlopen error timed out>
+[03:17:08] Yahoo AMZN: HTTP Error 429: Too Many Requests
+[03:18:09]   повтор через 1s после ошибки: <urlopen error timed out>
+[03:19:10]   повтор через 2s после ошибки: <urlopen error timed out>
+[03:20:13] Stooq amzn.us: <urlopen error timed out>
+[03:20:14] Yahoo TSLA: HTTP Error 429: Too Many Requests
+[03:21:15]   повтор через 1s после ошибки: <urlopen error timed out>
+[03:22:16]   повтор через 2s после ошибки: <urlopen error timed out>
+[03:23:19] Stooq tsla.us: <urlopen error timed out>
+[03:23:20]   время вышло, остаток класса equity доберём следующим прогоном
+[03:23:20] Дневные свечи (equity): получено 0 из 29
+[03:23:20]   время вышло, остаток класса etf доберём следующим прогоном
+[03:23:20] Дневные свечи (etf): получено 0 из 14
+[03:23:20]   время вышло, остаток класса commodity доберём следующим прогоном
+[03:23:20] Дневные свечи (commodity): получено 0 из 5
+[03:23:20]   время вышло, остаток класса index доберём следующим прогоном
+[03:23:20] Дневные свечи (index): получено 0 из 4
+[03:23:20] ЦБ РФ: USD/RUB = 82.5143
+[03:23:20] История: добавлено 76 строк, обновлено 0, всего ключей 32070
+[03:23:20] Снапшот: 76 инструментов
+[03:23:20] На догрузку истории времени не осталось, доберём следующим прогоном
